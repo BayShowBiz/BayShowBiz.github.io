@@ -2,13 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>BayShowBiz Hero Section</title>
+  <title>BayShowBiz</title>
   <style>
-    body {
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
       margin: 0;
       padding: 0;
-      height: 100vh;
-      background-image: url('images/your-backdrop.jpg'); /* Replace with your image path */
+      height: 100%;
+      font-family: sans-serif;
+    }
+
+    body {
+      background-image: url('images/your-backdrop.jpg'); /* Replace with your actual image path */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -21,12 +29,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       text-align: center;
-      gap: 20px; /* Controls spacing between lines */
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.5); /* Optional: adds contrast behind text */
+      gap: 20px;
+      padding: 30px;
+      background-color: rgba(0, 0, 0, 0.5); /* Optional: soft contrast */
       border-radius: 12px;
+      max-width: 90%;
     }
 
     .hero-content h1 {
@@ -38,7 +46,7 @@
     .hero-content p {
       margin: 0;
       font-size: 1.3em;
-      color: #f5f5dc; /* Cream color */
+      color: #f5f5dc; /* Cream */
       font-style: italic;
     }
 
@@ -67,6 +75,7 @@
   </div>
 </body>
 </html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
