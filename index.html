@@ -1,17 +1,4 @@
-<div style="text-align: center; margin-bottom: 30px;">
-  <a href="mailto:bayshowbiz@icloud.com" style="
-    background-color: #8b5e3c;
-    color: #f5f5dc;
-    padding: 14px 28px;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 20px;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
-    font-family: Arial, sans-serif;
-    display: inline-block;
-  ">
-    🎟️ Book a Show with Colinda
+
   </a>
 </div>
 <div style="
@@ -32,6 +19,70 @@
 <h2 style="font-size: 24px; text-align: center; font-style: italic; text-shadow: 31px 31px 50px #8b5e3c;">
   Not your average Bay Area Senior Entertainment
 </h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BayShowBiz Booking</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-image: url('images/your-backdrop.jpg'); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .booking-button {
+      background-color: #ff4081;
+      color: white;
+      padding: 1em 2em;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease;
+      text-decoration: none;
+    }
+
+    .booking-button:hover {
+      transform: scale(1.05);
+    }
+
+    .dropdown-text {
+      display: none;
+      margin-top: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 1em;
+      border-radius: 8px;
+      font-size: 1.1em;
+      color: #333;
+      max-width: 400px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <a href="mailto:bayshowbiz@icloud.com" class="booking-button" onclick="toggleText()">Book a Show with Colinda</a>
+  <div class="dropdown-text" id="textBlock">
+    Let's book a show and Colinda will bring the entertainment!
+  </div>
+
+  <script>
+    function toggleText() {
+      const text = document.getElementById("textBlock");
+      text.style.display = text.style.display === "none" ? "block" : "none";
+    }
+  </script>
+</body>
+</html>
 
 <a href="https://youtu.be/j8VkwDXTQlY?si=lkslOeV5fDLYPyCX" target="_blank">
   <img src="https://img.youtube.com/vi/j8VkwDXTQlY/0.jpg" width="300">
