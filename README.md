@@ -15,7 +15,7 @@
   </a>
 </div>
 <div style="
-  background-image: url('./Copilot_20251105_165709.png');
+  background-image: url('./backdrop bayshowbiz.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
