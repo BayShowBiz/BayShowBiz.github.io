@@ -1,9 +1,29 @@
-<div style="text-align: center; margin-top: 30px;">
-  <a href="mailto:bayshowbiz@icloud.com" style="background-color: #8b5e3c; color: #f5f5dc; padding: 12px 24px; text-decoration: none; font-size: 18px; border-radius: 8px; box-shadow: 2px 2px 6px rgba(0,0,0,0.3); font-family: Arial, sans-serif;">
+<div style="text-align: center; margin-bottom: 30px;">
+  <a href="mailto:bayshowbiz@icloud.com" style="
+    background-color: #8b5e3c;
+    color: #f5f5dc;
+    padding: 14px 28px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    font-family: Arial, sans-serif;
+    display: inline-block;
+  ">
     🎟️ Book a Show with Colinda
   </a>
 </div>
-<div style="background-image: url('wood-background.png'); background-size: cover; background-repeat: no-repeat; background-position: center; padding: 40px; font-family: Arial, sans-serif; color: #f5f5dc; box-shadow: inset 0 0 100px rgba(0,0,0,0.3);">
+<div style="
+  background-image: url('./Copilot_20251105_165709.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+  color: #f5f5dc;
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.3);
+">
 
 <h1 style="font-family: 'Georgia', serif; font-size: 48px; text-align: center; text-shadow: 2px 2px 4px #8b5e3c;">
   Welcome to BayShowBiz
@@ -72,6 +92,10 @@
 📧 <a href="mailto:bayshowbiz@icloud.com" style="color: #f5f5dc;">bayshowbiz@icloud.com</a><br>
 📍 Los Altos, CA
 
+<div style="text-align: center; margin-top: 30px;">
+  <a href="mailto:bayshowbiz@icloud.com" style="background-color: #8b5e3c; color: #f5f5dc; padding: 12px 24px; text-decoration: none; font-size: 18px; border-radius: 8px; box-shadow: 2px 2px 6px rgba(0,0,0,0.3); font-family: Arial, sans-serif;">
+    🎟️ Book a Show with Colinda
+  </a>
 </div>
 
-
+</div>
