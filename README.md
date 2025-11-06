@@ -32,8 +32,9 @@
 <h2 style="font-size: 24px; text-align: center; font-style: italic; text-shadow: 1px 1px 3px #8b5e3c;">
   Not your average Senior Entertainment
 </h2>
-
----
+<a href="https://youtu.be/j8VkwDXTQlY?si=lkslOeV5fDLYPyCX" target="_blank">
+  <img src="https://img.youtube.com/vi/j8VkwDXTQlY/0.jpg" width="300">
+</a>
 
 <h3 style="font-size: 20px;">Information</h3>
 
