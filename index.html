@@ -1,142 +1,80 @@
-<!DOCTYPE html>
+  </a>
+</div>
+<div style="
+  background-image: url('./backdrop bayshowbiz.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 40px;
+  background-attachment: fixed;
+  height:100vh;
+  font-family: Arial, sans-serif;
+  color: #f5f5dc;
+  box-shadow: inset 0 0 80px rgba(0,0,0,0.3);
+">
+
+<h1 style="font-family: 'Georgia', serif; font-size: 60px; text-align: center; text-shadow: 2px 2px 4px #8b5e3c;">
+  Welcome to BayShowBiz
+</h1>
+<h2 style="font-size: 35px; text-align: center; font-style: italic; text-shadow: 1px 1px 3px #8b5e3c;">
+  Not your average Senior Entertainment
+
+  
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>BayShowBiz Hero Section</title>
+  <title>BayShowBiz Booking Button</title>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      background-image: url('images/your-backdrop.jpg'); /* Replace with your image path */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      gap: 20px; /* Controls spacing between lines */
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.5); /* Optional: adds contrast behind text */
-      border-radius: 12px;
-    }
-
-    .hero-content h1 {
-      margin: 0;
-      font-size: 2.5em;
-      color: #fff;
-    }
-
-    .hero-content p {
-      margin: 0;
-      font-size: 1.3em;
-      color: #f5f5dc; /* Cream color */
-      font-style: italic;
+    .button-wrapper {
+      position: relative;
+      display: inline-block;
+      margin-top: 300px; /* Adjust to move it lower */
     }
 
     .booking-button {
+      background-color: #DC143C;
+      color: white;
       padding: 0.6em 1.2em;
       font-size: 1em;
-      background-color: #ff4081;
-      color: white;
       border: none;
-      border-radius: 6px;
+      border-radius: 4px;
+      cursor: pointer;
       text-decoration: none;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: transform 0.2s ease;
     }
 
-    .booking-button:hover {
-      transform: scale(1.05);
+    .dropdown-text {
+      display: none;
+      position: absolute;
+      top: 110%; /* Position below the button */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #333;
+      padding: 0.5em 0.7em;
+      border-radius: 2px;
+      font-size: 0.7em;
+      white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .button-wrapper:hover .dropdown-text {
+      display: block;
     }
   </style>
 </head>
 <body>
-  <div class="hero-content">
-    <h1>BayShowBiz</h1>
-    <p>Bringing joy and music to senior communities</p>
-    <a href="mailto:bayshowbiz@icloud.com" class="booking-button">Book a Show with Colinda</a>
+  <div class="button-wrapper">
+    <a href="mailto:bayshowbiz@icloud.com" class="booking-button">
+      Book a Show
+    </a>
+    <div class="dropdown-text">
+     Chat with Colinda De Groen about booking a Bay Area Show!
+    </div>
   </div>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>BayShowBiz Hero Section</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      background-image: url('images/your-backdrop.jpg'); /* Replace with your image path */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      gap: 20px; /* Controls spacing between lines */
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.5); /* Optional: adds contrast behind text */
-      border-radius: 12px;
-    }
-
-    .hero-content h1 {
-      margin: 0;
-      font-size: 2.5em;
-      color: #fff;
-    }
-
-    .hero-content p {
-      margin: 0;
-      font-size: 1.3em;
-      color: #f5f5dc; /* Cream color */
-      font-style: italic;
-    }
-
-    .booking-button {
-      padding: 0.6em 1.2em;
-      font-size: 1em;
-      background-color: #ff4081;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: transform 0.2s ease;
-    }
-
-    .booking-button:hover {
-      transform: scale(1.05);
-    }
-  </style>
-</head>
-<body>
-  <div class="hero-content">
-    <h1>BayShowBiz</h1>
-    <p>Bringing joy and music to senior communities</p>
-    <a href="mailto:bayshowbiz@icloud.com" class="booking-button">Book a Show with Colinda</a>
-  </div>
-</body>
-</html>
-
 
 
 <h3 style="font-size: 20px;">Information</h3>
