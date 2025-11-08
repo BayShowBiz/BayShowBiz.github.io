@@ -4,59 +4,7 @@
   
 <meta charset="UTF-8" />
 <title>BayShowBiz – Not Your Average Senior Entertainment!</title>
-  <!-- HERO: PHOTO SLIDES + NEW SCRIPT -->
-<section id="shows">
-<h2>Interactive Sing-Alongs</h2>
-<p>Engaging, upbeat sing-alongs with residents in all levels of care.</p>
-
-<div class="show-slideshow">
-<div class="show-slide show-active">
-<img src="Colinda De Groen BayShowBiz im1.jpg" alt="BayShowBiz interactive sing-alongs 1">
-</div>
-<div class="show-slide">
-<img src="Colinda De Groen BayShowBiz im2.jpg" alt="BayShowBiz interactive sing-alongs 2">
-</div>
-<div class="show-slide">
-<img src="Colinda De Groen BayShowBiz im3.jpg" alt="BayShowBiz interactive sing-alongs 3">
-</div>
-<div class="show-slide">
-<img src="Colinda De Groen BayShowBiz im4.jpg" alt="BayShowBiz interactive sing-alongs 4">
-</div>
-<div class="show-slide">
-<img src="Colinda De Groen BayShowBiz im5.jpg" alt="BayShowBiz interactive sing-alongs 5">
-</div>
-<div class="show-slide">
-<img src="Colinda De Groen BayShowBiz im6.jpg" alt="BayShowBiz interactive sing-alongs 6">
-</div>
-<div class="show-slide">
-<img src="Colinda De Groen BayShowBiz im7.jpg" alt="BayShowBiz interactive sing-alongs 7">
-</div>
-</div>
-</section>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-const slides = document.querySelectorAll('#shows .show-slide');
-let current = 0;
-
-function showSlide(index) {
-slides.forEach((slide, i) => {
-slide.classList.toggle('show-active', i === index);
-});
-}
-
-function nextSlide() {
-current = (current + 1) % slides.length;
-showSlide(current);
-}
-
-// show the first slide
-showSlide(current);
-
-// change slides every 4 seconds
-setInterval(nextSlide, 4000);
-});
-</script> 
+ 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
 .slideshow {
@@ -466,6 +414,57 @@ welcoming atmosphere where everyone feels seen, included, and invited to
 join in the fun.
 </p>
 </section>
+   <!-- HERO: PHOTO SLIDES + NEW SCRIPT -->
+<section id="shows">
+
+<div class="show-slideshow">
+<div class="show-slide show-active">
+<img src="Colinda De Groen BayShowBiz im1.jpg" alt="BayShowBiz interactive sing-alongs 1">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im2.jpg" alt="BayShowBiz interactive sing-alongs 2">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im3.jpg" alt="BayShowBiz interactive sing-alongs 3">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im4.jpg" alt="BayShowBiz interactive sing-alongs 4">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im5.jpg" alt="BayShowBiz interactive sing-alongs 5">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im6.jpg" alt="BayShowBiz interactive sing-alongs 6">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im7.jpg" alt="BayShowBiz interactive sing-alongs 7">
+</div>
+</div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+const slides = document.querySelectorAll('#shows .show-slide');
+let current = 0;
+
+function showSlide(index) {
+slides.forEach((slide, i) => {
+slide.classList.toggle('show-active', i === index);
+});
+}
+
+function nextSlide() {
+current = (current + 1) % slides.length;
+showSlide(current);
+}
+
+// show the first slide
+showSlide(current);
+
+// change slides every 4 seconds
+setInterval(nextSlide, 4000);
+});
+</script> 
 <section id="experience" style="background: rgba(210, 180, 140, 1); border: 2px solid rgba(244, 201, 166, 0.93); border-radius: 8px; padding: 60px 25px; margin: 60px auto; max-width: 900px; text-align: center; font-family: 'Georgia', serif; color: #3b2a1a; box-shadow: 0 0 18px rgba(255,220,150,0.25);">
 
 <h2 style="font-size: 1.30em; color: #342414; margin-bottom: 20px; text-shadow: 0 0 0px rgba(139, 69, 19, 1), 1px 1px 3px rgba(0,0,0,0.3);">
