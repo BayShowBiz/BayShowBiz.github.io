@@ -14,7 +14,7 @@ margin: 0 auto;
 overflow: hidden;
 }
 
-.slide {
+.show-slide {
 display: none;
 text-align: center;
 }
@@ -23,7 +23,7 @@ text-align: center;
 display: block;
 }
 
-.slideshow img {
+.show-slideshow img {
 width: 75%; /* about 25% smaller than full box */
 max-width: 100%;
 aspect-ratio: 3 / 4; /* portrait style */
@@ -407,9 +407,6 @@ border-radius: 6px;
 <img src="Colinda De Groen BayShowBiz im5.jpg" alt="BayShowBiz interactive sing-alongs 5">
 </div>
 <div class="show-slide">
-<img src="Colinda De Groen BayShowBiz im6.jpg" alt="BayShowBiz interactive sing-alongs 6">
-</div>
-<div class="show-slide">
 <img src="Colinda De Groen BayShowBiz im7.jpg" alt="BayShowBiz interactive sing-alongs 7">
 </div>
 </div>
@@ -534,57 +531,7 @@ Bringing joy, rhythm, and connection through live music and interactive shows.
 </p>
 
 </section>
- <!-- HERO: PHOTO SLIDES + NEW SCRIPT -->
-<section id="shows">
 
-<div class="show-slideshow">
-<div class="show-slide show-active">
-<img src="Colinda De Groen BayShowBiz im1.jpg" alt="BayShowBiz interactive sing-alongs 1">
-</div>
-<div class="show-slide">
-<img src="Colinda De Groen BayShowBiz im2.jpg" alt="BayShowBiz interactive sing-alongs 2">
-</div>
-<div class="show-slide">
-<img src="Colinda De Groen BayShowBiz im3.jpg" alt="BayShowBiz interactive sing-alongs 3">
-</div>
-<div class="show-slide">
-<img src="Colinda De Groen BayShowBiz im4.jpg" alt="BayShowBiz interactive sing-alongs 4">
-</div>
-<div class="show-slide">
-<img src="Colinda De Groen BayShowBiz im5.jpg" alt="BayShowBiz interactive sing-alongs 5">
-</div>
-<div class="show-slide">
-<img src="Colinda De Groen BayShowBiz im6.jpg" alt="BayShowBiz interactive sing-alongs 6">
-</div>
-<div class="show-slide">
-<img src="Colinda De Groen BayShowBiz im7.jpg" alt="BayShowBiz interactive sing-alongs 7">
-</div>
-</div>
-</section>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-const slides = document.querySelectorAll('#shows .show-slide');
-let current = 0;
-
-function showSlide(index) {
-slides.forEach((slide, i) => {
-slide.classList.toggle('show-active', i === index);
-});
-}
-
-function nextSlide() {
-current = (current + 1) % slides.length;
-showSlide(current);
-}
-
-// show the first slide
-showSlide(current);
-
-// change slides every 4 seconds
-setInterval(nextSlide, 4000);
-});
-</script> 
 </section> 
 </div>
 <!-- SHOW OPTIONS (your 3 main shows from the site) -->
