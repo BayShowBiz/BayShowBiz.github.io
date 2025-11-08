@@ -3,6 +3,32 @@
 <head>
 <meta charset="UTF-8" />
 <title>BayShowBiz – Not Your Average Senior Entertainment!</title>
+<style>
+.slideshow {
+position: relative;
+max-width: 300px; /* overall box size */
+margin: 0 auto;
+overflow: hidden;
+}
+
+.slide {
+display: none;
+text-align: center;
+}
+
+.slide.active {
+display: block;
+}
+
+.slideshow img {
+width: 75%; /* about 25% smaller than full box */
+max-width: 100%;
+aspect-ratio: 3 / 4; /* portrait style */
+height: auto;
+object-fit: cover;
+border-radius: 6px;
+}
+</style>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
 /* ----- GLOBAL ----- */
@@ -386,7 +412,7 @@ join in the fun.
 </section>
 <section id="experience" style="background: rgba(210, 180, 140, 1); border: 2px solid rgba(244, 201, 166, 0.93); border-radius: 8px; padding: 60px 25px; margin: 60px auto; max-width: 900px; text-align: center; font-family: 'Georgia', serif; color: #3b2a1a; box-shadow: 0 0 18px rgba(255,220,150,0.25);">
 
-<h2 style="font-size: 1.6em; color: #342414; margin-bottom: 20px; text-shadow: 0 0 10px rgba(139, 69, 19, 1), 1px 1px 3px rgba(0,0,0,0.3);">
+<h2 style="font-size: 1.45em; color: #342414; margin-bottom: 20px; text-shadow: 0 0 10px rgba(139, 69, 19, 1), 1px 1px 3px rgba(0,0,0,0.3);">
 Four Years Musical Experience in Communities Like
 </h2>
 
@@ -457,7 +483,7 @@ showSlide(current);
 // Show the first slide immediately
 showSlide(current);
 
-// Change slides every 4 seconds
+// Change slides every 3 seconds
 setInterval(nextSlide, 4000);
 });
 </script>   
