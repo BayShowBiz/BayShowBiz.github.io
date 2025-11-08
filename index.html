@@ -19,7 +19,7 @@ display: none;
 text-align: center;
 }
 
-.slide.active {
+.show-slide.show-active {
 display: block;
 }
 
@@ -349,6 +349,101 @@ margin-top: 1.5rem;
 Live sing-alongs, vintage favorites, and eluminated shows for seniors across the Bay Area.
 </p>
 </div>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BayShowBiz – Test Slideshow</title>
+
+<!-- SLIDESHOW STYLES -->
+<style>
+.show-slideshow {
+position: relative;
+max-width: 300px;
+margin: 20px auto;
+overflow: hidden;
+}
+
+.show-slide {
+display: none;
+text-align: center;
+}
+
+.show-slide.show-active {
+display: block;
+}
+
+.show-slideshow img {
+width: 75%; /* about 25% smaller */
+max-width: 100%;
+aspect-ratio: 3 / 4; /* portrait shape */
+height: auto;
+object-fit: cover;
+border-radius: 6px;
+}
+</style>
+</head>
+<body>
+
+<!-- ✅ PUT THIS NEAR THE TOP OF YOUR BODY -->
+<section id="shows">
+<h2>Interactive Sing-Alongs</h2>
+<p>Engaging, upbeat sing-alongs with residents in all levels of care.</p>
+
+<div class="show-slideshow">
+<div class="show-slide show-active">
+<img src="Colinda De Groen BayShowBiz im1.jpg" alt="BayShowBiz interactive sing-alongs 1">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im2.jpg" alt="BayShowBiz interactive sing-alongs 2">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im3.jpg" alt="BayShowBiz interactive sing-alongs 3">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im4.jpg" alt="BayShowBiz interactive sing-alongs 4">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im5.jpg" alt="BayShowBiz interactive sing-alongs 5">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im6.jpg" alt="BayShowBiz interactive sing-alongs 6">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im7.jpg" alt="BayShowBiz interactive sing-alongs 7">
+</div>
+</div>
+</section>
+
+<!-- SLIDESHOW SCRIPT AT THE BOTTOM OF BODY -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+// 👉 This finds ALL elements with class "show-slide"
+const slides = document.querySelectorAll('.show-slide');
+if (!slides.length) return;
+
+let current = 0;
+
+function showSlide(index) {
+slides.forEach((slide, i) => {
+slide.classList.toggle('show-active', i === index);
+});
+}
+
+function nextSlide() {
+current = (current + 1) % slides.length;
+showSlide(current);
+}
+
+// show the first slide
+showSlide(current);
+
+// change slides every 4 seconds
+setInterval(nextSlide, 4000);
+});
+</script>
+</body>
+</html>
 <div class="header-contact">
 <span><strong>Colinda De Groen</strong> – Musician &amp; Entertainer</span>
 <span>Los Altos, CA</span>
