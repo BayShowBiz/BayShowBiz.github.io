@@ -392,6 +392,59 @@ Watch Video Showcase
 
 <!-- ABOUT COLINDA (combining original site text + improved bio) -->
 <section>
+  <!-- HERO: PHOTO SLIDES + NEW SCRIPT -->
+<section id="shows">
+<h2>Interactive Sing-Alongs</h2>
+<p>Engaging, upbeat sing-alongs with residents in all levels of care.</p>
+
+<div class="show-slideshow">
+<div class="show-slide show-active">
+<img src="Colinda De Groen BayShowBiz im1.jpg" alt="BayShowBiz interactive sing-alongs 1">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im2.jpg" alt="BayShowBiz interactive sing-alongs 2">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im3.jpg" alt="BayShowBiz interactive sing-alongs 3">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im4.jpg" alt="BayShowBiz interactive sing-alongs 4">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im5.jpg" alt="BayShowBiz interactive sing-alongs 5">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im6.jpg" alt="BayShowBiz interactive sing-alongs 6">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im7.jpg" alt="BayShowBiz interactive sing-alongs 7">
+</div>
+</div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+const slides = document.querySelectorAll('#shows .show-slide');
+let current = 0;
+
+function showSlide(index) {
+slides.forEach((slide, i) => {
+slide.classList.toggle('show-active', i === index);
+});
+}
+
+function nextSlide() {
+current = (current + 1) % slides.length;
+showSlide(current);
+}
+
+// show the first slide
+showSlide(current);
+
+// change slides every 4 seconds
+setInterval(nextSlide, 4000);
+});
+</script>  
 <h2>About Colinda</h2>
 <h3>Crafted and designed to be a spectacular experience</h3>
 <p>
@@ -436,59 +489,7 @@ Bringing joy, rhythm, and connection through live music and interactive shows.
 </p>
 
 </section>
-<!-- HERO: PHOTO SLIDES + NEW SCRIPT -->
-<section id="shows">
-<h2>Interactive Sing-Alongs</h2>
-<p>Engaging, upbeat sing-alongs with residents in all levels of care.</p>
 
-<div class="slideshow">
-<div class="slide active">
-<img src="Colinda De Groen BayShowBiz im1.jpg" alt="BayShowBiz interactive sing-alongs 1">
-</div>
-<div class="slide">
-<img src="Colinda De Groen BayShowBiz im2.jpg" alt="BayShowBiz interactive sing-alongs 2">
-</div>
-<div class="slide">
-<img src="Colinda De Groen BayShowBiz im3.jpg" alt="BayShowBiz interactive sing-alongs 3">
-</div>
-<div class="slide">
-<img src="Colinda De Groen BayShowBiz im4.jpg" alt="BayShowBiz interactive sing-alongs 4">
-</div>
-<div class="slide">
-<img src="Colinda De Groen BayShowBiz im5.jpg" alt="BayShowBiz interactive sing-alongs 5">
-</div>
-<div class="slide">
-<img src="Colinda De Groen BayShowBiz im6.jpg" alt="BayShowBiz interactive sing-alongs 6">
-</div>
-<div class="slide">
-<img src="Colinda De Groen BayShowBiz im7.jpg" alt="BayShowBiz interactive sing-alongs 7">
-</div>
-</div>
-</section>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-const slides = document.querySelectorAll('#shows .slide');
-let current = 0;
-
-function showSlide(index) {
-slides.forEach((s, i) => {
-s.classList.toggle('active', i === index);
-});
-}
-
-function nextSlide() {
-current = (current + 1) % slides.length;
-showSlide(current);
-}
-
-// Show the first slide immediately
-showSlide(current);
-
-// Change slides every 3 seconds
-setInterval(nextSlide, 4000);
-});
-</script>   
 </section> 
 </div>
 <!-- SHOW OPTIONS (your 3 main shows from the site) -->
