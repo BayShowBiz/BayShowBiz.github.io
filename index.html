@@ -386,7 +386,7 @@ join in the fun.
 </section>
 <section id="experience" style="background: rgba(210, 180, 140, 1); border: 2px solid rgba(244, 201, 166, 0.93); border-radius: 8px; padding: 60px 25px; margin: 60px auto; max-width: 900px; text-align: center; font-family: 'Georgia', serif; color: #3b2a1a; box-shadow: 0 0 18px rgba(255,220,150,0.25);">
 
-<h2 style="font-size: 1em; color: #342414; margin-bottom: 20px; text-shadow: 0 0 10px rgba(139, 69, 19, 1), 1px 1px 3px rgba(0,0,0,0.3);">
+<h2 style="font-size: 1.6em; color: #342414; margin-bottom: 20px; text-shadow: 0 0 10px rgba(139, 69, 19, 1), 1px 1px 3px rgba(0,0,0,0.3);">
 Four Years Musical Experience in Communities Like
 </h2>
 
@@ -411,13 +411,42 @@ Bringing joy, rhythm, and connection through live music and interactive shows.
 <!-- HERO: PHOTO SLIDES + NEW SCRIPT -->
 <section id="shows">
 <h2>Interactive Sing-Alongs</h2>
- <script>
+<p>Engaging, upbeat sing-alongs with residents in all levels of care.</p>
+
+<div class="slideshow">
+<div class="slide active">
+<img src="Colinda De Groen BayShowBiz im1.jpg" alt="BayShowBiz interactive sing-alongs 1">
+</div>
+<div class="slide">
+<img src="Colinda De Groen BayShowBiz im2.jpg" alt="BayShowBiz interactive sing-alongs 2">
+</div>
+<div class="slide">
+<img src="Colinda De Groen BayShowBiz im3.jpg" alt="BayShowBiz interactive sing-alongs 3">
+</div>
+<div class="slide">
+<img src="Colinda De Groen BayShowBiz im4.jpg" alt="BayShowBiz interactive sing-alongs 4">
+</div>
+<div class="slide">
+<img src="Colinda De Groen BayShowBiz im5.jpg" alt="BayShowBiz interactive sing-alongs 5">
+</div>
+<div class="slide">
+<img src="Colinda De Groen BayShowBiz im6.jpg" alt="BayShowBiz interactive sing-alongs 6">
+</div>
+<div class="slide">
+<img src="Colinda De Groen BayShowBiz im7.jpg" alt="BayShowBiz interactive sing-alongs 7">
+</div>
+</div>
+</section>
+
+<script>
 document.addEventListener('DOMContentLoaded', function () {
-const slides = document.querySelectorAll('.slide');
+const slides = document.querySelectorAll('#shows .slide');
 let current = 0;
 
 function showSlide(index) {
-slides.forEach((s, i) => s.classList.toggle('active', i === index));
+slides.forEach((s, i) => {
+s.classList.toggle('active', i === index);
+});
 }
 
 function nextSlide() {
@@ -428,19 +457,10 @@ showSlide(current);
 // Show the first slide immediately
 showSlide(current);
 
-// Change slides every 3 seconds
+// Change slides every 4 seconds
 setInterval(nextSlide, 4000);
 });
-</script>
-
-<div class="slideshow">
-<div class="slide active"><img src="Colinda De Groen BayShowBiz im1.jpg"></div>
-<div class="slide"><img src="Colinda De Groen BayShowBiz im2.jpg"></div>
-<div class="slide"><img src="Colinda De Groen BayShowBiz im3.jpg"></div>
-<div class="slide"><img src="Colinda De Groen BayShowBiz im4.jpg"></div>
-<div class="slide"><img src="Colinda De Groen BayShowBiz im5.jpg"></div>
-<div class="slide"><img src="Colinda De Groen BayShowBiz im7.jpg"></div>
-</div>   
+</script>   
 </section> 
 </div>
 <!-- SHOW OPTIONS (your 3 main shows from the site) -->
