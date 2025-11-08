@@ -2,31 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>BayShowBiz | Live Music & Joyful Entertainment for Seniors</title>
+<title>BayShowBiz – Not Your Average Senior Entertainment!</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="BayShowBiz brings interactive live music, sing-alongs, and joyful variety shows to senior communities across the Bay Area. Perfect for Assisted Living, Memory Care, and Skilled Nursing." />
-
-<!-- Basic Open Graph tags -->
-<meta property="og:title" content="BayShowBiz | Live Music & Joyful Entertainment for Seniors" />
-<meta property="og:description" content="Interactive music, lights, and sing-alongs for senior communities across the Bay Area." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://bayshowbiz.com/" />
-
 <style>
-:root {
---color-bg: #f7f4ee;
---color-surface: #ffffff;
---color-primary: #c95c2a;
---color-primary-dark: #9b4115;
---color-accent: #f3b32c;
---color-text: #222222;
---color-muted: #666666;
---shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.08);
---radius-lg: 14px;
---radius-md: 8px;
---radius-pill: 999px;
-}
-
+/* ----- GLOBAL ----- */
 * {
 box-sizing: border-box;
 margin: 0;
@@ -34,1074 +13,578 @@ padding: 0;
 }
 
 body {
-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-background: var(--color-bg);
-color: var(--color-text);
+font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+sans-serif;
+color: #fdf7ec;
 line-height: 1.6;
+background:
+radial-gradient(circle at 15% 0%, rgba(255, 255, 255, 0.17), transparent 60%),
+radial-gradient(circle at 85% 0%, rgba(255, 255, 255, 0.17), transparent 60%),
+url("images/rustic-wood-background.jpg");
+background-size: auto, auto, cover;
+background-attachment: fixed;
+}
+
+/* Dark overlay to keep text readable on wood texture */
+body::before {
+content: "";
+position: fixed;
+inset: 0;
+background: rgba(0, 0, 0, 0.55);
+z-index: -1;
 }
 
 a {
-color: inherit;
+color: #ffd479;
 text-decoration: none;
 }
 
-img {
-max-width: 100%;
-display: block;
+a:hover {
+text-decoration: underline;
 }
 
-/* Layout */
-
-.page-wrapper {
-min-height: 100vh;
-display: flex;
-flex-direction: column;
-}
-
-main {
-flex: 1;
-}
-
-.container {
-width: 100%;
-max-width: 1120px;
+.page {
+max-width: 1100px;
 margin: 0 auto;
-padding: 0 1.5rem;
+padding: 1.5rem 1rem 3rem;
 }
 
-/* Header / Nav */
-
-.site-header {
-position: sticky;
-top: 0;
-z-index: 50;
-background: rgba(247, 244, 238, 0.98);
-backdrop-filter: blur(10px);
-border-bottom: 1px solid rgba(0, 0, 0, 0.03);
-}
-
-.header-inner {
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding: 0.6rem 1.5rem;
-max-width: 1120px;
-margin: 0 auto;
-}
-
-.logo {
-display: flex;
-align-items: center;
-gap: 0.4rem;
-font-weight: 800;
-letter-spacing: 0.05em;
-text-transform: uppercase;
-font-size: 0.9rem;
-}
-
-.logo-mark {
-width: 32px;
-height: 32px;
-border-radius: 50%;
-background: radial-gradient(circle at 30% 30%, #ffe9a8, #f07f3c);
-display: flex;
-align-items: center;
-justify-content: center;
-font-weight: 900;
-font-size: 0.9rem;
-color: #fff;
-box-shadow: var(--shadow-soft);
-}
-
-.nav-links {
-display: flex;
-align-items: center;
-gap: 1.2rem;
-font-size: 0.9rem;
-}
-
-.nav-links a {
+/* ----- HEADER WITH SPOTLIGHTS ----- */
+header.site-header {
 position: relative;
-padding-bottom: 0.15rem;
+padding: 1.5rem 1rem 1rem;
+margin-bottom: 1.5rem;
+border-radius: 10px;
+background: linear-gradient(
+to bottom,
+rgba(0, 0, 0, 0.9),
+rgba(0, 0, 0, 0.7)
+);
+overflow: hidden;
 }
 
-.nav-links a::after {
+header.site-header::before,
+header.site-header::after {
 content: "";
 position: absolute;
-left: 0;
-bottom: 0;
-width: 0;
-height: 2px;
-background: var(--color-primary);
-transition: width 0.2s ease;
+top: -40%;
+width: 45%;
+height: 200%;
+background: radial-gradient(
+circle at 50% 0%,
+rgba(255, 255, 255, 0.45),
+transparent 70%
+);
+opacity: 0.4;
+mix-blend-mode: screen;
 }
 
-.nav-links a:hover::after {
-width: 100%;
+header.site-header::before {
+left: -5%;
+transform: rotate(-8deg);
 }
 
-.nav-cta {
-padding: 0.45rem 0.95rem;
-border-radius: var(--radius-pill);
-background: var(--color-primary);
-color: #fff;
-font-weight: 600;
-border: none;
-cursor: pointer;
-box-shadow: var(--shadow-soft);
+header.site-header::after {
+right: -5%;
+transform: rotate(8deg);
+}
+
+.logo-title {
+position: relative;
+z-index: 1;
+display: flex;
+flex-direction: column;
+gap: 0.2rem;
+}
+
+.logo-title h1 {
+font-family: "Georgia", "Times New Roman", serif;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+font-size: clamp(1.8rem, 3vw, 2.4rem);
+color: #ffe9b5;
+text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
+}
+
+.logo-title h2 {
 font-size: 0.9rem;
-transition: background 0.15s ease, transform 0.1s ease;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: #f4d7a8;
 }
 
-.nav-cta:hover {
-background: var(--color-primary-dark);
-transform: translateY(-1px);
+.logo-title p.tagline {
+margin-top: 0.2rem;
+font-size: 0.95rem;
+color: #fff7de;
 }
 
-@media (max-width: 720px) {
-.header-inner {
-padding-inline: 1rem;
-}
-.nav-links {
-display: none; /* keep it simple – no hamburger for now */
-}
-}
-
-/* Hero */
-
-.hero {
-padding: 3rem 0 3.5rem;
+.header-contact {
+position: relative;
+z-index: 1;
+margin-top: 0.75rem;
+display: flex;
+flex-wrap: wrap;
+gap: 0.5rem 1.5rem;
+font-size: 0.9rem;
 }
 
-.hero-inner {
+.header-contact span {
+opacity: 0.9;
+}
+
+@media (min-width: 720px) {
+header.site-header {
 display: grid;
-grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
-gap: 2rem;
+grid-template-columns: 2fr 1.5fr;
 align-items: center;
+gap: 1rem;
 }
 
-.hero-kicker {
+.header-contact {
+justify-content: flex-end;
+text-align: right;
+}
+}
+
+/* ----- HERO SLIDESHOW ----- */
+.hero {
+display: grid;
+grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+gap: 1.5rem;
+align-items: stretch;
+margin-bottom: 2.25rem;
+}
+
+@media (max-width: 800px) {
+.hero {
+grid-template-columns: 1fr;
+}
+}
+
+.slideshow {
+position: relative;
+border-radius: 14px;
+overflow: hidden;
+box-shadow: 0 15px 35px rgba(0, 0, 0, 0.65);
+background: rgba(0, 0, 0, 0.45);
+min-height: 260px;
+}
+
+.slide {
+position: absolute;
+inset: 0;
+opacity: 0;
+transition: opacity 1s ease-in-out;
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+.slide.active {
+opacity: 1;
+}
+
+/* Replace these URLs with your actual photos */
+.slide:nth-child(1) {
+background-image: url("images/slide-1.jpg");
+}
+
+.slide:nth-child(2) {
+background-image: url("images/slide-2.jpg");
+}
+
+.slide:nth-child(3) {
+background-image: url("images/slide-3.jpg");
+}
+
+.slide-overlay {
+position: absolute;
+inset: 0;
+background: linear-gradient(
+to top,
+rgba(0, 0, 0, 0.55),
+rgba(0, 0, 0, 0.15)
+);
+}
+
+.slideshow-caption {
+position: absolute;
+bottom: 1rem;
+left: 1.2rem;
+right: 1.2rem;
+z-index: 2;
+font-size: 0.95rem;
+color: #ffeac1;
+text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+.slideshow-tag {
+display: inline-block;
+background: rgba(0, 0, 0, 0.75);
+padding: 0.2rem 0.55rem;
+border-radius: 999px;
+font-size: 0.75rem;
+text-transform: uppercase;
+letter-spacing: 0.14em;
+margin-bottom: 0.25rem;
+}
+
+/* ----- HERO TEXT / CTA ----- */
+.hero-text {
+padding: 1rem 1.1rem;
+border-radius: 14px;
+background: linear-gradient(
+145deg,
+rgba(19, 10, 3, 0.95),
+rgba(70, 38, 9, 0.88)
+);
+box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+}
+
+.hero-text h3 {
+font-size: 1.4rem;
+margin-bottom: 0.6rem;
+color: #ffe6a8;
+font-family: "Georgia", "Times New Roman", serif;
+}
+
+.hero-text p {
+font-size: 0.95rem;
+margin-bottom: 0.75rem;
+}
+
+ul.hero-points {
+list-style: none;
+margin: 0.5rem 0 0.9rem;
+padding: 0;
+font-size: 0.92rem;
+}
+
+ul.hero-points li::before {
+content: "♪";
+margin-right: 0.4rem;
+color: #ffd479;
+}
+
+ul.hero-points li {
+margin-bottom: 0.25rem;
+}
+
+.button-row {
+display: flex;
+flex-wrap: wrap;
+gap: 0.6rem;
+margin-top: 0.8rem;
+}
+
+.btn {
 display: inline-flex;
 align-items: center;
-gap: 0.4rem;
-padding: 0.2rem 0.8rem;
-border-radius: var(--radius-pill);
-background: rgba(201, 92, 42, 0.08);
-font-size: 0.78rem;
+justify-content: center;
+padding: 0.55rem 1.2rem;
+border-radius: 999px;
+border: 1px solid rgba(255, 212, 121, 0.8);
+font-size: 0.9rem;
 text-transform: uppercase;
-letter-spacing: 0.08em;
+letter-spacing: 0.1em;
 font-weight: 600;
-color: var(--color-muted);
-margin-bottom: 0.8rem;
-}
-
-.hero-title {
-font-size: clamp(2.1rem, 4vw, 2.7rem);
-line-height: 1.15;
-margin-bottom: 0.7rem;
-}
-
-.hero-highlight {
-color: var(--color-primary);
-}
-
-.hero-subtitle {
-font-size: 1rem;
-color: var(--color-muted);
-max-width: 32rem;
-margin-bottom: 1.3rem;
-}
-
-.hero-badges {
-display: flex;
-flex-wrap: wrap;
-gap: 0.4rem;
-margin-bottom: 1.3rem;
-}
-
-.hero-badge {
-font-size: 0.78rem;
-padding: 0.18rem 0.65rem;
-border-radius: var(--radius-pill);
-border: 1px solid rgba(0, 0, 0, 0.05);
-background: rgba(255, 255, 255, 0.8);
-}
-
-.hero-actions {
-display: flex;
-flex-wrap: wrap;
-gap: 0.75rem;
-align-items: center;
-margin-bottom: 0.8rem;
+cursor: pointer;
+transition: transform 0.13s ease, box-shadow 0.13s ease,
+background 0.13s ease;
 }
 
 .btn-primary {
-display: inline-flex;
-align-items: center;
-justify-content: center;
-gap: 0.4rem;
-padding: 0.8rem 1.4rem;
-border-radius: var(--radius-pill);
-background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-color: #fff;
-font-weight: 600;
-border: none;
-cursor: pointer;
-box-shadow: var(--shadow-soft);
-font-size: 0.95rem;
-transition: transform 0.1s ease, box-shadow 0.1s ease;
-text-decoration: none;
+background: radial-gradient(circle at 30% 0, #ffe9b5, #f0a93e);
+color: #231106;
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.65);
 }
 
 .btn-primary:hover {
 transform: translateY(-1px);
-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+box-shadow: 0 14px 30px rgba(0, 0, 0, 0.8);
 }
 
 .btn-ghost {
-padding: 0.75rem 1.2rem;
-border-radius: var(--radius-pill);
-border: 1px solid rgba(0, 0, 0, 0.1);
 background: transparent;
-font-size: 0.9rem;
-cursor: pointer;
-display: inline-flex;
-align-items: center;
-gap: 0.4rem;
+color: #ffe9b5;
 }
 
-.hero-note {
-font-size: 0.82rem;
-color: var(--color-muted);
+.btn-ghost:hover {
+background: rgba(0, 0, 0, 0.4);
 }
 
-.hero-right {
-position: relative;
-}
-
-.hero-card {
-background: var(--color-surface);
-border-radius: var(--radius-lg);
-padding: 1.5rem;
-box-shadow: var(--shadow-soft);
-position: relative;
-overflow: hidden;
-}
-
-.hero-card::before {
-content: "";
-position: absolute;
-inset: -40%;
-opacity: 0.16;
-background:
-radial-gradient(circle at 0 0, #ffecc1, transparent 55%),
-radial-gradient(circle at 100% 0, #ffb38c, transparent 55%),
-radial-gradient(circle at 0 100%, #ffd2e2, transparent 55%);
-pointer-events: none;
-}
-
-.hero-card-header {
-font-weight: 700;
-margin-bottom: 0.2rem;
-}
-
-.hero-card-sub {
-font-size: 0.85rem;
-color: var(--color-muted);
-margin-bottom: 0.9rem;
-}
-
-.hero-card-list {
-list-style: none;
-font-size: 0.9rem;
-display: grid;
-gap: 0.4rem;
-margin-bottom: 1.1rem;
-}
-
-.hero-card-list li::before {
-content: "♪";
-margin-right: 0.35rem;
-color: var(--color-primary);
-font-size: 0.9rem;
-}
-
-.hero-tagline {
-font-size: 0.82rem;
-font-style: italic;
-color: var(--color-muted);
-}
-
-@media (max-width: 900px) {
-.hero-inner {
-grid-template-columns: minmax(0, 1fr);
-}
-.hero {
-padding-top: 2.2rem;
-}
-.hero-right {
-order: -1;
-}
-}
-
-/* Sections */
-
+/* ----- CONTENT SECTIONS ----- */
 section {
-padding: 2.8rem 0;
+margin-bottom: 2.25rem;
+padding: 1.25rem 1.1rem;
+border-radius: 14px;
+background: rgba(0, 0, 0, 0.65);
+box-shadow: 0 16px 35px rgba(0, 0, 0, 0.7);
+backdrop-filter: blur(6px);
 }
 
-.section-header {
-text-align: center;
-margin-bottom: 2rem;
+section h2 {
+font-family: "Georgia", "Times New Roman", serif;
+font-size: 1.35rem;
+margin-bottom: 0.75rem;
+color: #ffe6a8;
+border-bottom: 1px solid rgba(255, 230, 168, 0.18);
+padding-bottom: 0.2rem;
 }
 
-.section-kicker {
-font-size: 0.8rem;
-text-transform: uppercase;
-letter-spacing: 0.14em;
-color: var(--color-muted);
-margin-bottom: 0.4rem;
+section h3 {
+font-size: 1.05rem;
+margin-top: 0.7rem;
+margin-bottom: 0.3rem;
+color: #ffdfa0;
 }
 
-.section-title {
-font-size: 1.5rem;
-margin-bottom: 0.4rem;
-}
-
-.section-subtitle {
+section p {
 font-size: 0.95rem;
-color: var(--color-muted);
-max-width: 32rem;
-margin: 0.2rem auto 0;
+margin-bottom: 0.5rem;
 }
 
-/* Shows */
+section ul {
+padding-left: 1.1rem;
+font-size: 0.92rem;
+}
 
-.shows-grid {
+/* Show cards */
+.show-grid {
 display: grid;
-grid-template-columns: repeat(3, minmax(0, 1fr));
-gap: 1.4rem;
+grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+gap: 1rem;
+margin-top: 0.75rem;
 }
 
 .show-card {
-background: var(--color-surface);
-border-radius: var(--radius-lg);
-padding: 1.3rem 1.2rem 1.4rem;
-box-shadow: var(--shadow-soft);
-display: flex;
-flex-direction: column;
-gap: 0.5rem;
+background: rgba(25, 12, 4, 0.85);
+border-radius: 12px;
+padding: 0.8rem 0.9rem 0.95rem;
+border: 1px solid rgba(255, 230, 168, 0.15);
 }
 
-.show-label {
-font-size: 0.75rem;
-text-transform: uppercase;
-letter-spacing: 0.13em;
-color: var(--color-muted);
-}
-
-.show-title {
-font-weight: 700;
-margin-bottom: 0.15rem;
-}
-
-.show-body {
-font-size: 0.9rem;
-color: var(--color-muted);
+.show-card h3 {
+border-bottom: none;
+margin-bottom: 0.25rem;
 }
 
 .show-meta {
-margin-top: 0.7rem;
-font-size: 0.78rem;
-color: var(--color-muted);
-}
-
-@media (max-width: 900px) {
-.shows-grid {
-grid-template-columns: minmax(0, 1fr);
-}
-}
-
-/* Video */
-
-.video-wrapper {
-display: grid;
-grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-gap: 1.8rem;
-align-items: center;
-}
-
-.video-frame {
-position: relative;
-padding-bottom: 56.25%;
-height: 0;
-border-radius: var(--radius-lg);
-overflow: hidden;
-box-shadow: var(--shadow-soft);
-background: #000;
-}
-
-.video-frame iframe {
-position: absolute;
-inset: 0;
-width: 100%;
-height: 100%;
-border: 0;
-}
-
-.video-text {
-font-size: 0.95rem;
-color: var(--color-muted);
-display: grid;
-gap: 0.5rem;
-}
-
-.video-bullets {
-list-style: none;
-display: grid;
-gap: 0.35rem;
-font-size: 0.9rem;
-}
-
-.video-bullets li::before {
-content: "★";
-margin-right: 0.3rem;
-color: var(--color-primary);
 font-size: 0.8rem;
-}
-
-@media (max-width: 900px) {
-.video-wrapper {
-grid-template-columns: minmax(0, 1fr);
-}
-}
-
-/* About */
-
-.about-card {
-background: var(--color-surface);
-border-radius: var(--radius-lg);
-padding: 1.8rem 1.6rem;
-box-shadow: var(--shadow-soft);
-max-width: 780px;
-margin: 0 auto;
-font-size: 0.95rem;
-color: var(--color-muted);
-}
-
-.about-card strong {
-color: var(--color-text);
-}
-
-.about-quote {
-margin-top: 1rem;
-font-style: italic;
-font-size: 0.9rem;
-border-left: 3px solid rgba(0, 0, 0, 0.08);
-padding-left: 0.8rem;
-}
-
-/* Testimonials */
-
-.testimonials-grid {
-display: grid;
-grid-template-columns: repeat(3, minmax(0, 1fr));
-gap: 1.4rem;
-}
-
-.testimonial-card {
-background: var(--color-surface);
-border-radius: var(--radius-lg);
-padding: 1.3rem 1.2rem;
-box-shadow: var(--shadow-soft);
-font-size: 0.9rem;
-display: grid;
-gap: 0.5rem;
-}
-
-.testimonial-name {
-font-weight: 600;
-font-size: 0.85rem;
-}
-
-.testimonial-role {
-font-size: 0.78rem;
-color: var(--color-muted);
-}
-
-@media (max-width: 900px) {
-.testimonials-grid {
-grid-template-columns: minmax(0, 1fr);
-}
-}
-
-/* Service area */
-
-.service-area {
-display: grid;
-grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-gap: 1.6rem;
-align-items: start;
-font-size: 0.9rem;
-color: var(--color-muted);
-}
-
-.pill-list {
-list-style: none;
-display: flex;
-flex-wrap: wrap;
-gap: 0.4rem;
-margin-top: 0.6rem;
-}
-
-.pill-list li {
-padding: 0.2rem 0.6rem;
-border-radius: var(--radius-pill);
-border: 1px solid rgba(0, 0, 0, 0.07);
-background: rgba(255, 255, 255, 0.85);
-font-size: 0.78rem;
-}
-
-@media (max-width: 900px) {
-.service-area {
-grid-template-columns: minmax(0, 1fr);
-}
-}
-
-/* Contact / Booking */
-
-.contact-grid {
-display: grid;
-grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-gap: 1.8rem;
-}
-
-.contact-card {
-background: var(--color-surface);
-border-radius: var(--radius-lg);
-padding: 1.8rem 1.6rem;
-box-shadow: var(--shadow-soft);
-}
-
-.contact-note {
-font-size: 0.85rem;
-color: var(--color-muted);
-margin-bottom: 1rem;
-}
-
-.form-grid {
-display: grid;
-gap: 0.9rem;
-}
-
-label {
-font-size: 0.8rem;
-font-weight: 600;
-display: block;
+text-transform: uppercase;
+letter-spacing: 0.12em;
+opacity: 0.8;
 margin-bottom: 0.2rem;
 }
 
-input,
-select,
-textarea {
-width: 100%;
-border-radius: var(--radius-md);
-border: 1px solid rgba(0, 0, 0, 0.12);
-padding: 0.55rem 0.7rem;
-font-size: 0.9rem;
-font-family: inherit;
-background: #fcfbf8;
-}
-
-textarea {
-min-height: 90px;
-resize: vertical;
-}
-
-.contact-meta {
-font-size: 0.9rem;
-color: var(--color-muted);
-display: grid;
-gap: 0.4rem;
-}
-
-.contact-meta a {
-text-decoration: underline;
-text-decoration-thickness: 1px;
-text-underline-offset: 2px;
-}
-
-.contact-meta strong {
-color: var(--color-text);
-}
-
-@media (max-width: 900px) {
-.contact-grid {
-grid-template-columns: minmax(0, 1fr);
-}
-}
-
-/* Footer */
-
-.site-footer {
-padding: 1.8rem 1.5rem 2.3rem;
-background: #1b1b1b;
-color: #f2f2f2;
-font-size: 0.82rem;
-margin-top: 2rem;
-}
-
-.footer-inner {
-max-width: 1120px;
-margin: 0 auto;
-display: flex;
-flex-wrap: wrap;
-gap: 1rem;
-align-items: center;
-justify-content: space-between;
-}
-
-.footer-links {
-display: flex;
-flex-wrap: wrap;
-gap: 0.8rem;
-}
-
-.footer-links a {
+.footer-note {
+font-size: 0.8rem;
 opacity: 0.85;
+margin-top: 0.4rem;
 }
 
-.footer-links a:hover {
-opacity: 1;
-}
-
-.footer-copy {
+footer {
+text-align: center;
+font-size: 0.8rem;
 opacity: 0.8;
+margin-top: 1.5rem;
 }
 </style>
 </head>
-
 <body>
-<div class="page-wrapper">
-<!-- Header -->
+<div class="page">
+<!-- HEADER WITH TWO SPOTLIGHTS -->
 <header class="site-header">
-<div class="header-inner">
-<a href="#top" class="logo">
-<div class="logo-mark">B</div>
-<span>BayShowBiz</span>
-</a>
-
-<nav class="nav-links" aria-label="Main navigation">
-<a href="#shows">Shows</a>
-<a href="#video">Video</a>
-<a href="#about">About</a>
-<a href="#testimonials">Testimonials</a>
-<a href="#service-area">Service Area</a>
-<a href="#contact" class="nav-cta">Book a Show</a>
-</nav>
+<div class="logo-title">
+<h1>BayShowBiz</h1>
+<h2>Not Your Average Senior Entertainment</h2>
+<p class="tagline">
+Live sing-alongs, vintage favorites, and light-up shows for seniors across the Bay Area.
+</p>
+</div>
+<div class="header-contact">
+<span><strong>Colinda De Groen</strong> – Musician &amp; Entertainer</span>
+<span>Los Altos, CA</span>
+<span>📞 (720) 882-1677</span>
+<span>📧 <a href="mailto:bayshowbiz@icloud.com">bayshowbiz@icloud.com</a></span>
+<span>
+<a href="https://bayshowbiz.com" target="_blank" rel="noopener">BayShowBiz.com</a> ·
+<a href="https://www.facebook.com/profile.php?id=61569140451339" target="_blank" rel="noopener">Facebook</a> ·
+<a href="https://www.youtube.com/@BayShowBiz" target="_blank" rel="noopener">YouTube</a>
+</span>
 </div>
 </header>
 
-<main id="top">
-<!-- Hero -->
+<!-- HERO: PHOTO SLIDES + NEW SCRIPT -->
 <section class="hero">
-<div class="container hero-inner">
-<div class="hero-left">
-<div class="hero-kicker">
-<span>Not your average senior entertainment</span>
+<div class="slideshow">
+<div class="slide active"></div>
+<div class="slide"></div>
+<div class="slide"></div>
+<div class="slide-overlay"></div>
+<div class="slideshow-caption">
+<div class="slideshow-tag">Photo Showcase</div>
+Joyful, interactive music shows with sing-alongs, dancing, light-up outfits,
+and lots of smiles – tailored for senior living communities.
 </div>
-<h1 class="hero-title">
-Live Music, Lights &amp; <span class="hero-highlight">Joy</span> for Senior Communities
-</h1>
-<p class="hero-subtitle">
-Interactive sing-alongs, multiple instruments, and heartwarming moments for
-Assisted Living, Independent Living, Memory Care, and Skilled Nursing residents.
+</div>
+
+<div class="hero-text">
+<h3>Interactive Sing-Alongs &amp; Light-Up Shows</h3>
+<p>
+I’m Colinda De Groen, a musician and entertainer specializing in upbeat,
+vintage-style shows for seniors in all levels of care.
 </p>
-
-<div class="hero-badges">
-<span class="hero-badge">Bay Area • Los Altos, CA</span>
-<span class="hero-badge">4+ Years in Dementia Care Entertainment</span>
-<span class="hero-badge">40s–80s Classics &amp; Themed Shows</span>
-</div>
-
-<div class="hero-actions">
-<a href="#contact" class="btn-primary">
-<span>Book a Show</span>
-<span aria-hidden="true">→</span>
-</a>
-
-<a href="https://www.youtube.com/@BayShowBiz" class="btn-ghost" target="_blank" rel="noopener">
-<span>Watch a sample</span>
-</a>
-</div>
-
-<p class="hero-note">
-Perfect for monthly entertainment, special events, holidays, and last-minute cancellations.
+<p>
+With over eight years as a professional entertainer — and four of those
+dedicated to senior living and dementia-focused communities — I’ve learned
+which songs truly light up the room.
 </p>
-</div>
-
-<div class="hero-right">
-<div class="hero-card" aria-label="Overview of BayShowBiz entertainment">
-<div class="hero-card-header">Welcome to BayShowBiz</div>
-<div class="hero-card-sub">Interactive senior entertainment designed to feel good and feel included.</div>
-<ul class="hero-card-list">
-<li>Live instrument sing-alongs with 4+ instruments per show</li>
-<li>Music, lights &amp; dancing with fun, light-up outfits</li>
-<li>Soft, meaningful private room visits available</li>
+<ul class="hero-points">
+<li>Engaging, upbeat sing-alongs with 40s–80s favorites.</li>
+<li>Multiple live instruments for extra fun and variety.</li>
+<li>Light-up costumes and dancing among residents for a real “showbiz” feel.</li>
+<li>Designed for IL, AL, MC, and skilled nursing.</li>
 </ul>
-<p class="hero-tagline">
-“Being engaged in music is very important — it’s so much more fun when seniors sing along!”
-</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Shows -->
-<section id="shows">
-<div class="container">
-<div class="section-header">
-<div class="section-kicker">Shows</div>
-<h2 class="section-title">Choose from three uplifting programs</h2>
-<p class="section-subtitle">
-All shows are 1-hour, designed for AL, IL, MC, and HC with a mix of 40s–80s music or themed sets:
-Big Band, Country, Broadway, Holiday, and more.
-</p>
-</div>
-
-<div class="shows-grid">
-<!-- Show 1 -->
-<article class="show-card">
-<div class="show-label">Show 01</div>
-<h3 class="show-title">Live Instrument Sing-Along</h3>
-<p class="show-body">
-A lively sing-along where Colinda plays several instruments such as ukulele, mandolin, banjolele,
-electric guitar, small guitars, violin, and steel drum. She brings a minimum of four instruments
-to each show and guides the group through familiar favorites.
-</p>
-<p class="show-meta">
-On average, communities enjoy singing together to about 20 songs in this hour-long show.
-</p>
-</article>
-
-<!-- Show 2 -->
-<article class="show-card">
-<div class="show-label">Show 02</div>
-<h3 class="show-title">Music, Lights &amp; Dancing</h3>
-<p class="show-body">
-A magical show filled with movement and sparkle. Colinda wears special light-up clothing and
-moves throughout the room, singing with residents to professional soundtracks. Great for
-singing along, toe tapping, clapping, and dancing.
-</p>
-<p class="show-meta">
-Wonderful for larger events, holiday parties, and “something special” on the calendar.
-</p>
-</article>
-
-<!-- Show 3 -->
-<article class="show-card">
-<div class="show-label">Show 03</div>
-<h3 class="show-title">Private Room Visits</h3>
-<p class="show-body">
-Gentle, one-on-one or small-group visits for residents who stay in their rooms or are in hospice.
-With a ukulele and soft songs, Colinda creates calm, meaningful musical moments for residents
-and their families.
-</p>
-<p class="show-meta">
-Ideal for hospice care, recovery, and residents who benefit from quieter, intimate music time.
-</p>
-</article>
-</div>
-</div>
-</section>
-
-<!-- Video Showcase -->
-<section id="video">
-<div class="container">
-<div class="section-header">
-<div class="section-kicker">Video</div>
-<h2 class="section-title">See the energy in action</h2>
-<p class="section-subtitle">
-Here’s a short sample of the kind of music, warmth, and interaction BayShowBiz brings to each show.
-</p>
-</div>
-
-<div class="video-wrapper">
-<div class="video-frame" aria-label="BayShowBiz video sample">
-<!-- Replace the src with any BayShowBiz YouTube video you prefer -->
-<iframe
-width="560"
-height="315"
-src="https://www.youtube.com/embed/temPMPxh3hk"
-title="BayShowBiz – Energy in Action"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen>
-</iframe>
-
-</div>
-
-<div class="video-text">
-<p>
-Every program is designed to be upbeat, inclusive, and adaptable. Residents can sing along,
-clap, tap their toes, or simply relax and enjoy the familiar melodies.
-</p>
-<ul class="video-bullets">
-<li>Classic hits from the 40s–80s that residents recognize and love.</li>
-<li>Interactive, not passive — Colinda talks, jokes, and connects with the audience.</li>
-<li>Flexible volume and pacing for different care levels and room sizes.</li>
-<li>Perfect for monthly calendars, themed events, and family days.</li>
-</ul>
-<p>
-Want to see more? Visit the
-<a href="https://www.youtube.com/@BayShowBiz" target="_blank" rel="noreferrer">BayShowBiz YouTube channel</a>
-for additional clips.
-</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- About -->
-<section id="about">
-<div class="container">
-<div class="section-header">
-<div class="section-kicker">About Colinda</div>
-<h2 class="section-title">Music, heart, and senior-living experience</h2>
-<p class="section-subtitle">
-A professional entertainer who understands both the joy of music and the needs of senior communities.
-</p>
-</div>
-
-<article class="about-card">
-<p>
-<strong>Colinda De Groen</strong> has been a professional entertainer for over eight years,
-with four of those years dedicated to senior living and dementia-focused communities. She finds deep joy
-in bringing music to active seniors, assisted living residents, individuals with dementia, and
-skilled nursing facilities. Her shows are upbeat, interactive, and heartwarming — with plenty of ShowBiz!
-</p>
-<p>
-Drawing on her experience working inside senior communities, she understands how to adapt to different
-care levels, room layouts, and energy levels on any given day. She collaborates easily with Activities
-Directors to match themes, holidays, and special occasions on the calendar.
-</p>
-<div class="about-quote">
-“Being engaged in music is very important — it’s so much more fun when seniors sing along!”
-</div>
-</article>
-</div>
-</section>
-
-<!-- Testimonials -->
-<section id="testimonials">
-<div class="container">
-<div class="section-header">
-<div class="section-kicker">Kind words</div>
-<h2 class="section-title">What communities say</h2>
-<p class="section-subtitle">
-Replace these sample quotes with your own reviews from Activities Directors, staff, and families.
-</p>
-</div>
-
-<div class="testimonials-grid">
-<article class="testimonial-card">
-<p>
-“Our residents lit up when Colinda started playing. The mix of instruments and sing-along favorites
-kept everyone engaged from start to finish.”
-</p>
-<div>
-<div class="testimonial-name">Activities Director</div>
-<div class="testimonial-role">Assisted Living Community</div>
-</div>
-</article>
-
-<article class="testimonial-card">
-<p>
-“Her light-up outfit and energy made our holiday party feel truly special. Families commented on how
-joyful and inclusive the afternoon was.”
-</p>
-<div>
-<div class="testimonial-name">Life Enrichment Manager</div>
-<div class="testimonial-role">Memory Care Community</div>
-</div>
-</article>
-
-<article class="testimonial-card">
-<p>
-“The private room visits were incredibly meaningful. She created a peaceful, musical space for our
-hospice residents and their loved ones.”
-</p>
-<div>
-<div class="testimonial-name">RN / Hospice Liaison</div>
-<div class="testimonial-role">Skilled Nursing &amp; Hospice</div>
-</div>
-</article>
-</div>
-</div>
-</section>
-
-<!-- Service Area -->
-<section id="service-area">
-<div class="container">
-<div class="section-header">
-<div class="section-kicker">Service area</div>
-<h2 class="section-title">Serving senior communities across the Bay Area</h2>
-<p class="section-subtitle">
-Based in Los Altos, BayShowBiz travels to many nearby cities for regular entertainment and special events.
-</p>
-</div>
-
-<div class="service-area">
-<div>
-<p>
-BayShowBiz is ideal for Independent Living, Assisted Living, Memory Care, and Skilled Nursing communities
-looking for fresh, interactive programming.
-</p>
-<p style="margin-top: 0.6rem;">
-Typical bookings include monthly entertainment, themed parties, holiday events, and occasional
-last-minute fill-ins when vendors cancel.
-</p>
-</div>
-
-<div>
-<p>Examples of areas served:</p>
-<ul class="pill-list">
-<li>Los Altos</li>
-<li>Mountain View</li>
-<li>Palo Alto</li>
-<li>Sunnyvale</li>
-<li>Cupertino</li>
-<li>Redwood City</li>
-<li>Menlo Park</li>
-<li>San Jose (select areas)</li>
-<li>And nearby Bay Area communities</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Contact / Booking -->
-<section id="contact">
-<div class="container">
-<div class="section-header">
-<div class="section-kicker">Booking</div>
-<h2 class="section-title">Ready to add music and joy to your calendar?</h2>
-<p class="section-subtitle">
-Share a few details about your community and preferred dates, and we’ll follow up to confirm availability.
-</p>
-</div>
-
-<div class="contact-grid">
-<!-- Form -->
-<div class="contact-card">
-<p class="contact-note">
-This simple form uses email. If your website platform supports forms, you can connect it to this layout.
-</p>
-
-<form action="mailto:bayshowbiz@icloud.com" method="post" enctype="text/plain">
-<div class="form-grid">
-<div>
-<label for="name">Your name</label>
-<input type="text" id="name" name="Name" required />
-</div>
-
-<div>
-<label for="community">Community / Organization</label>
-<input type="text" id="community" name="Community" required />
-</div>
-
-<div>
-<label for="email">Email</label>
-<input type="email" id="email" name="Email" required />
-</div>
-
-<div>
-<label for="phone">Phone (optional)</label>
-<input type="tel" id="phone" name="Phone" />
-</div>
-
-<div>
-<label for="showType">Type of show</label>
-<select id="showType" name="Show Type">
-<option value="Live Instrument Sing-Along">Live Instrument Sing-Along</option>
-<option value="Music, Lights &amp; Dancing">Music, Lights &amp; Dancing</option>
-<option value="Private Room Visits">Private Room Visits</option>
-<option value="Not sure yet">Not sure yet</option>
-</select>
-</div>
-
-<div>
-<label for="date">Preferred date(s)</label>
-<input type="text" id="date" name="Preferred Dates" placeholder="e.g., second Tuesday of the month" />
-</div>
-
-<div>
-<label for="message">Anything else you’d like to share?</label>
-<textarea id="message" name="Message"
-placeholder="Care level, approximate group size, special themes, or notes."></textarea>
-</div>
-
-<div>
-<button type="submit" class="btn-primary">
-<span>Send booking request</span>
-<span aria-hidden="true">♪</span>
-</button>
-</div>
-</div>
-</form>
-</div>
-
-<!-- Direct contact info -->
-<div class="contact-meta">
-<p><strong>Direct contact</strong></p>
-<p>
-Email:
-<a href="mailto:bayshowbiz@icloud.com">bayshowbiz@icloud.com</a>
-</p>
-<p>
-Phone:
-<a href="tel:+17208821677">(720) 882-1677</a>
-</p>
-<p>Location: Los Altos, CA</p>
-<p>
-Facebook:
-<a href="https://www.facebook.com/61582652498272" target="_blank" rel="noreferrer">
-BayShowBiz on Facebook
+<div class="button-row">
+<a class="btn btn-primary" href="mailto:bayshowbiz@icloud.com?subject=BayShowBiz%20Booking">
+Book a Show
 </a>
-</p>
-<p>
-YouTube:
-<a href="https://www.youtube.com/@BayShowBiz" target="_blank" rel="noreferrer">
-BayShowBiz YouTube Channel
+<a class="btn btn-ghost" href="https://www.youtube.com/@BayShowBiz" target="_blank" rel="noopener">
+Watch Video Showcase
 </a>
-</p>
-<p style="margin-top: 0.7rem;">
-To preserve the privacy of residents, no videos will be posted from live performances inside communities.
-</p>
-</div>
 </div>
 </div>
 </section>
-</main>
 
-<!-- Footer -->
-<footer class="site-footer">
-<div class="footer-inner">
-<div class="footer-copy">
-© <span id="year"></span> BayShowBiz • Live Music &amp; Joyful Entertainment for Seniors
+<!-- ABOUT COLINDA (combining original site text + improved bio) -->
+<section>
+<h2>About Colinda</h2>
+<h3>Crafted and designed to be a magical experience</h3>
+<p>
+Colinda De Groen has been a professional entertainer for over eight years,
+with four of those years dedicated to senior living and dementia-focused
+communities. She finds deep joy in bringing music to active seniors,
+assisted living residents, individuals with dementia, and skilled nursing
+facilities.
+</p>
+<p>
+Her shows are upbeat, interactive, and heartwarming — with plenty of ShowBiz!
+“Being engaged in music is very important — it’s so much more fun when seniors
+sing along!”
+</p>
+<p>
+Colinda plays and sings live, moves among residents, and creates a warm,
+welcoming atmosphere where everyone feels seen, included, and invited to
+join in the fun.
+</p>
+</section>
+
+<!-- SHOW OPTIONS (your 3 main shows from the site) -->
+<section>
+<h2>Choose from Three Different Shows</h2>
+<p>
+All shows are designed for AL, IL, MC, and HC as a 1-hour sing-along style
+program with a mix of 40s–80s music or themed shows like Big Band, Country,
+Broadway, Holiday, and Pop.
+</p>
+
+<div class="show-grid">
+<div class="show-card">
+<div class="show-meta">Show #1</div>
+<h3>Live Instrument Sing-Along</h3>
+<p>
+Colinda plays several instruments: ukulele, mandolin, banjolele,
+electric guitar, several styles of small guitars, violin, and
+steel drum. She brings a minimum of four instruments to each show.
+</p>
+<p>
+On average, you’ll sing about 20 songs together — toe-tapping standards,
+golden oldies, and familiar favorites that residents love.
+</p>
 </div>
-<div class="footer-links">
-<a href="#top">Back to top</a>
-<a href="#shows">Shows</a>
-<a href="#contact">Book a show</a>
+
+<div class="show-card">
+<div class="show-meta">Show #2</div>
+<h3>Music, Lights &amp; Dancing Show</h3>
+<p>
+This show is great for singing along and dancing. With fun themes to
+choose from, Colinda wears special light-up clothing that creates a
+magical experience.
+</p>
+<p>
+She moves around the room and sings with residents, often leading to
+dancing, toe tapping, and clapping. She sings to professional soundtracks
+and makes this a warm, wonderful entertainment experience.
+</p>
+</div>
+
+<div class="show-card">
+<div class="show-meta">Show #3</div>
+<h3>Private Room Visits</h3>
+<p>
+Having worked with seniors in all stages of life, Colinda understands
+that room visits are very important. She has shared beautiful moments
+through music in private rooms with families and their loved ones
+in Hospice Care.
+</p>
+<p>
+Private room visits are available for booking with just the ukulele
+and softer songs for calm, meaningful connection.
+</p>
 </div>
 </div>
+<p class="footer-note">
+Each show is designed for feeling good and feeling included!
+</p>
+</section>
+
+<!-- BOOKING & CONTACT -->
+<section>
+<h2>Booking &amp; Contact</h2>
+<p>
+BayShowBiz is available for:
+</p>
+<ul>
+<li>Independent &amp; Assisted Living</li>
+<li>Memory Care &amp; Skilled Nursing</li>
+<li>Special events, holidays, family days, and staff celebrations</li>
+</ul>
+<p><strong>Standard Rate:</strong> $150 per hour. Colinda brings her own sound equipment.</p>
+<p>
+To preserve residents’ privacy, no videos are posted from live performances
+at communities. Instead, you can view a video showcase of Colinda’s music
+style and energy on YouTube.
+</p>
+<p>
+<strong>Ready to book or schedule a free trial session?</strong><br />
+Email <a href="mailto:bayshowbiz@icloud.com">bayshowbiz@icloud.com</a> or call
+<strong>(720) 882-1677</strong>.
+</p>
+</section>
+
+<footer>
+© <span id="year"></span> BayShowBiz · Los Altos, CA
 </footer>
 </div>
 
 <script>
-// Update year automatically
+// Simple slideshow logic
+const slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
+
+function showNextSlide() {
+slides[currentSlide].classList.remove("active");
+currentSlide = (currentSlide + 1) % slides.length;
+slides[currentSlide].classList.add("active");
+}
+
+if (slides.length > 1) {
+setInterval(showNextSlide, 5000); // change photo every 5 seconds
+}
+
+// Current year in footer
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
