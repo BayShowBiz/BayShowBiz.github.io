@@ -318,7 +318,7 @@ margin-top: 1.5rem;
 <h1>BayShowBiz</h1>
 <h2>Not Your Average Senior Entertainment</h2>
 <p class="tagline">
-Live sing-alongs, vintage favorites, and light-up shows for seniors across the Bay Area.
+Live sing-alongs, vintage favorites, and eluminated shows for seniors across the Bay Area.
 </p>
 </div>
 <div class="header-contact">
@@ -384,7 +384,7 @@ welcoming atmosphere where everyone feels seen, included, and invited to
 join in the fun.
 </p>
 </section>
-<section id="experience" style="background: rgba(255, 255, 255, 0.17); border: 2px solid rgba(180,145,80,0.6); border-radius: 8px; padding: 60px 25px; margin: 60px auto; max-width: 900px; text-align: center; font-family: 'Georgia', serif; color: #3b2a1a; box-shadow: 0 0 18px rgba(255,220,150,0.25);">
+<section id="experience" style="background: rgba(255, 255, 255, 0.17); border: 2px solid rgba(244, 201, 166, 0.93); border-radius: 8px; padding: 60px 25px; margin: 60px auto; max-width: 900px; text-align: center; font-family: 'Georgia', serif; color: #3b2a1a; box-shadow: 0 0 18px rgba(255,220,150,0.25);">
 
 <h2 style="font-size: 2.4em; color: #342414; margin-bottom: 20px; text-shadow: 0 0 10px rgba(139, 69, 19, 1), 1px 1px 3px rgba(0,0,0,0.3);">
 Four Years Musical Experience in Communities Like
@@ -403,27 +403,48 @@ Independent Living • Assisted Living • Healthcare • Memory Care
 <li>• Rosener House (PVI) — Menlo Park</li>
 </ul>
 
-<p style="margin-top: 35px; font-style: italic; font-size: 1.05em; color: #5b4b2a;">
+<p style="margin-top: 35px; font-style: italic; font-size: 1.05em; color: #342414;">
 Bringing joy, rhythm, and connection through live music and interactive shows.
 </p>
 
 </section>
 <!-- HERO: PHOTO SLIDES + NEW SCRIPT -->
-<section class="hero">
+<section id="shows">
+<h2>Interactive Sing-Alongs</h2>
+<p>... your text ...</p>
+
 <div class="slideshow">
-<div class="slide active"></div>
-<div class="Colinda De Groen BayShowBiz im1"></div>
-<div class="Colinda De Groen BayShowBiz im2"></div>
-<div class="Colinda De Groen BayShowBiz im3"></div>
-<div class="Colinda De Groen BayShowBiz im4"></div>
-<div class="Colinda De Groen BayShowBiz im5"></div>
-<div class="Colinda De Groen BayShowBiz im7"></div>
-<div class="slide-overlay"></div>
-<div class="slideshow-caption">
-<div class="slideshow-tag">Photo Showcase</div>
-Joyful, interactive music shows with sing-alongs, dancing, light-up outfits,
-and lots of smiles – tailored for senior living communities.
+<div class="slide active"><img src="Colinda De Groen BayShowBiz im1.jpg"></div>
+<div class="slide"><img src="Colinda De Groen BayShowBiz im2.jpg"></div>
+<div class="slide"><img src="Colinda De Groen BayShowBiz im3.jpg"></div>
+<div class="slide"><img src="Colinda De Groen BayShowBiz im4.jpg"></div>
+<div class="slide"><img src="Colinda De Groen BayShowBiz im5.jpg"></div>
+<div class="slide"><img src="Colinda De Groen BayShowBiz im7.jpg"></div>
+
 </div>
+</section>
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+const slides = document.querySelectorAll('.slide');
+let current = 0;
+
+function showSlide(index) {
+slides.forEach((s, i) => s.classList.toggle('active', i === index));
+}
+
+function nextSlide() {
+current = (current + 1) % slides.length;
+showSlide(current);
+}
+
+// Show the first slide immediately
+showSlide(current);
+
+// Change slides every 3 seconds
+setInterval(nextSlide, 4000);
+});
+</script>
+  
 </div>
 <!-- SHOW OPTIONS (your 3 main shows from the site) -->
 <section>
