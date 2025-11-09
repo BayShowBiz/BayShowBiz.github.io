@@ -7,8 +7,6 @@
  
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<style>
-  /* layout for slideshow + video */
 .media-row {
 display: flex;
 flex-wrap: wrap;
@@ -20,14 +18,13 @@ margin-top: 16px;
 
 .media-left,
 .media-right {
-flex: 1 1 280px; /* each takes about half on big screens, full width on small */
+flex: 1 1 280px;
 }
 
-/* slideshow box */
 .show-slideshow {
 position: relative;
 max-width: 300px;
-margin: 0; /* left aligned inside its column */
+margin: 0;
 overflow: hidden;
 }
 
@@ -41,31 +38,20 @@ display: block;
 }
 
 .show-slideshow img {
-width: 75%; /* keeps them small but clear */
+width: 75%;
 max-width: 100%;
 height: auto;
 object-fit: cover;
 border-radius: 6px;
 }
 
-/* responsive YouTube video */
-.video-wrapper {
-position: relative;
-padding-bottom: 56.25%; /* 16:9 */
-height: 0;
-max-width: 560px;
-}
-
-.video-wrapper iframe {
-position: absolute;
-top: 0;
-left: 0;
+.demo-video {
 width: 100%;
-height: 100%;
-border: 0;
+max-width: 420px;
+height: 236px;
+display: block;
 }
 
-/* stack vertically on small screens */
 @media (max-width: 800px) {
 .media-row {
 flex-direction: column;
@@ -76,6 +62,7 @@ align-items: center;
 margin: 0 auto;
 }
 }
+
 /* ----- GLOBAL ----- */
 * {
 box-sizing: border-box;
@@ -405,47 +392,13 @@ Live sing-alongs, vintage favorites, and eluminated shows for seniors across the
 </span>
 </div>
 </header>
-   <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>BayShowBiz – Test Slideshow</title>
-
-<!-- SLIDESHOW STYLES -->
-<style>
-.show-slideshow {
-position: relative;
-max-width: 300px;
-margin: 20px auto;
-overflow: hidden;
-}
-
-.show-slide {
-display: none;
-text-align: center;
-}
-
-.show-slide.show-active {
-display: block;
-}
-
-.show-slideshow img {
-width: 75%; /* about 25% smaller */
-max-width: 100%;
-aspect-ratio: 3 / 4; /* portrait shape */
-height: auto;
-object-fit: cover;
-border-radius: 6px;
-}
-</style>
-</head>
-<body>
-
-<!-- ✅ PUT THIS NEAR THE TOP OF YOUR BODY -->
-<section id="shows">
+  <section id="shows">
 <h2>Interactive Sing-Alongs</h2>
 <p>Engaging, upbeat sing-alongs with residents in all levels of care.</p>
 
+<div class="media-row">
+<!-- LEFT: SLIDESHOW -->
+<div class="media-left">
 <div class="show-slideshow">
 <div class="show-slide show-active">
 <img src="Colinda De Groen BayShowBiz im1.jpg" alt="BayShowBiz interactive sing-alongs 1">
@@ -463,15 +416,32 @@ border-radius: 6px;
 <img src="Colinda De Groen BayShowBiz im5.jpg" alt="BayShowBiz interactive sing-alongs 5">
 </div>
 <div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im6.jpg" alt="BayShowBiz interactive sing-alongs 6">
+</div>
+<div class="show-slide">
 <img src="Colinda De Groen BayShowBiz im7.jpg" alt="BayShowBiz interactive sing-alongs 7">
+</div>
+</div>
+</div>
+
+<!-- RIGHT: YOUTUBE VIDEO -->
+<div class="media-right">
+<iframe
+class="demo-video"
+width="420"
+height="236"
+src="https://www.youtube.com/embed/LmZCZx4Pa5c"
+title="BayShowBiz Demo Video"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
 </div>
 </div>
 </section>
 
-<!-- SLIDESHOW SCRIPT AT THE BOTTOM OF BODY -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-// 👉 This finds ALL elements with class "show-slide"
 const slides = document.querySelectorAll('.show-slide');
 if (!slides.length) return;
 
@@ -484,19 +454,17 @@ slide.classList.toggle('show-active', i === index);
 }
 
 function nextSlide() {
-current = (current + 1) % slides.length;
+current = (current + 1) % slides.length; // loops forever
 showSlide(current);
 }
 
-// show the first slide
+// Start on the first slide
 showSlide(current);
 
-// change slides every 4 seconds
+// Change slides every 4 seconds
 setInterval(nextSlide, 4000);
 });
 </script>
-</body>
-</html>
 <!-- ✅ PUT THIS NEAR THE TOP OF YOUR BODY -->
 <section id="shows">
 
@@ -684,10 +652,6 @@ Private room visits are available for booking with just the ukulele
 and softer songs for calm, meaningful connection.
 </p>
 </div>
-</div>
-<p class="footer-note">
-Each show is designed for feeling good and feeling included!
-</p>
 </section>
 
 <!-- BOOKING & CONTACT -->
