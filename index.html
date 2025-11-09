@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>  
+<head>
+  
 <meta charset="UTF-8" />
-<title>BayShowBiz – Not Your Average Senior Entertainment!</title> 
+<title>BayShowBiz – Not Your Average Senior Entertainment!</title>
+ 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+.slideshow {
+position: relative;
+max-width: 300px; /* overall box size */
+margin: 0 auto;
+overflow: hidden;
+}
 
+.show-slide {
+display: none;
+text-align: center;
+}
+
+.show-slide.show-active {
+display: block;
+}
+
+.show-slideshow img {
+width: 75%; /* about 25% smaller than full box */
+max-width: 100%;
+aspect-ratio: 3 / 4; /* portrait style */
+height: auto;
+object-fit: cover;
+border-radius: 6px;
+}
+</style>
+<style>
 /* ----- GLOBAL ----- */
 * {
 box-sizing: border-box;
@@ -48,61 +76,7 @@ max-width: 1100px;
 margin: 0 auto;
 padding: 1.5rem 1rem 3rem;
 }
-.media-row {
-display: flex;
-flex-wrap: wrap;
-gap: 24px;
-align-items: flex-start;
-justify-content: center;
-margin-top: 16px;
-}
 
-.media-left,
-.media-right {
-flex: 1 1 280px;
-}
-
-.show-slideshow {
-position: relative;
-max-width: 300px;
-margin: 0;
-overflow: hidden;
-}
-
-.show-slide {
-display: none;
-text-align: center;
-}
-
-.show-slide.show-active {
-display: block;
-}
-
-.show-slideshow img {
-width: 75%;
-max-width: 100%;
-height: auto;
-object-fit: cover;
-border-radius: 6px;
-}
-
-.demo-video {
-width: 100%;
-max-width: 420px;
-height: 236px;
-display: block;
-}
-
-@media (max-width: 800px) {
-.media-row {
-flex-direction: column;
-align-items: center;
-}
-
-.show-slideshow {
-margin: 0 auto;
-}
-}
 /* ----- HEADER WITH SPOTLIGHTS ----- */
 header.site-header {
 position: relative;
@@ -375,94 +349,46 @@ margin-top: 1.5rem;
 Live sing-alongs, vintage favorites, and eluminated shows for seniors across the Bay Area.
 </p>
 </div>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BayShowBiz – Test Slideshow</title>
 
-<div class="header-contact">
-<span><strong>Colinda De Groen</strong> – Musician &amp; Entertainer</span>
-<span>Los Altos, CA</span>
-<span>📞 (720) 882-1677</span>
-<span>📧 <a href="mailto:bayshowbiz@icloud.com">bayshowbiz@icloud.com</a></span>
-<span>
-<a href="https://bayshowbiz.com" target="_blank" rel="noopener">BayShowBiz.com</a> ·
-<a href="https://www.facebook.com/profile.php?id=61569140451339" target="_blank" rel="noopener">Facebook</a> ·
-<a href="https://www.youtube.com/@BayShowBiz" target="_blank" rel="noopener">YouTube</a>
-</span>
-</div>
-</header>
-  <section id="shows">
-<h2>Interactive Sing-Alongs</h2>
-<p>Engaging, upbeat sing-alongs with residents in all levels of care.</p>
-
-<div class="media-row">
-<!-- LEFT: SLIDESHOW -->
-<div class="media-left">
-<div class="show-slideshow">
-<div class="show-slide show-active">
-<img src="Colinda De Groen BayShowBiz im1.jpg" alt="BayShowBiz interactive sing-alongs 1">
-</div>
-<div class="show-slide">
-<img src="Colinda De Groen BayShowBiz im2.jpg" alt="BayShowBiz interactive sing-alongs 2">
-</div>
-<div class="show-slide">
-<img src="Colinda De Groen BayShowBiz im3.jpg" alt="BayShowBiz interactive sing-alongs 3">
-</div>
-<div class="show-slide">
-<img src="Colinda De Groen BayShowBiz im4.jpg" alt="BayShowBiz interactive sing-alongs 4">
-</div>
-<div class="show-slide">
-<img src="Colinda De Groen BayShowBiz im5.jpg" alt="BayShowBiz interactive sing-alongs 5">
-</div>
-<div class="show-slide">
-<img src="Colinda De Groen BayShowBiz im6.jpg" alt="BayShowBiz interactive sing-alongs 6">
-</div>
-<div class="show-slide">
-<img src="Colinda De Groen BayShowBiz im7.jpg" alt="BayShowBiz interactive sing-alongs 7">
-</div>
-</div>
-</div>
-
-<!-- RIGHT: YOUTUBE VIDEO -->
-<div class="media-right">
-<iframe
-class="demo-video"
-width="420"
-height="236"
-src="https://www.youtube.com/embed/LmZCZx4Pa5c"
-title="BayShowBiz Demo Video"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen>
-</iframe>
-</div>
-</div>
-</section>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-const slides = document.querySelectorAll('.show-slide');
-if (!slides.length) return;
-
-let current = 0;
-
-function showSlide(index) {
-slides.forEach((slide, i) => {
-slide.classList.toggle('show-active', i === index);
-});
+<!-- SLIDESHOW STYLES -->
+<style>
+.show-slideshow {
+position: relative;
+max-width: 300px;
+margin: 20px auto;
+overflow: hidden;
 }
 
-function nextSlide() {
-current = (current + 1) % slides.length; // loops forever
-showSlide(current);
+.show-slide {
+display: none;
+text-align: center;
 }
 
-// Start on the first slide
-showSlide(current);
+.show-slide.show-active {
+display: block;
+}
 
-// Change slides every 4 seconds
-setInterval(nextSlide, 4000);
-});
-</script>
+.show-slideshow img {
+width: 75%; /* about 25% smaller */
+max-width: 100%;
+aspect-ratio: 3 / 4; /* portrait shape */
+height: auto;
+object-fit: cover;
+border-radius: 6px;
+}
+</style>
+</head>
+<body>
+
 <!-- ✅ PUT THIS NEAR THE TOP OF YOUR BODY -->
 <section id="shows">
+<h2>Interactive Sing-Alongs</h2>
+<p>Engaging, upbeat sing-alongs with residents in all levels of care.</p>
 
 <div class="show-slideshow">
 <div class="show-slide show-active">
@@ -515,6 +441,19 @@ setInterval(nextSlide, 4000);
 </script>
 </body>
 </html>
+<div class="header-contact">
+<span><strong>Colinda De Groen</strong> – Musician &amp; Entertainer</span>
+<span>Los Altos, CA</span>
+<span>📞 (720) 882-1677</span>
+<span>📧 <a href="mailto:bayshowbiz@icloud.com">bayshowbiz@icloud.com</a></span>
+<span>
+<a href="https://bayshowbiz.com" target="_blank" rel="noopener">BayShowBiz.com</a> ·
+<a href="https://www.facebook.com/profile.php?id=61569140451339" target="_blank" rel="noopener">Facebook</a> ·
+<a href="https://www.youtube.com/@BayShowBiz" target="_blank" rel="noopener">YouTube</a>
+</span>
+</div>
+</header>
+
 <div class="hero-text">
 <h3>Interactive Sing-Alongs &amp; Dazzling Shows</h3>
 <p>
@@ -648,6 +587,10 @@ Private room visits are available for booking with just the ukulele
 and softer songs for calm, meaningful connection.
 </p>
 </div>
+</div>
+<p class="footer-note">
+Each show is designed for feeling good and feeling included!
+</p>
 </section>
 
 <!-- BOOKING & CONTACT -->
