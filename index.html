@@ -6,11 +6,28 @@
 <title>BayShowBiz – Not Your Average Senior Entertainment!</title>
  
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-.slideshow {
+
+<style>
+  /* layout for slideshow + video */
+.media-row {
+display: flex;
+flex-wrap: wrap;
+gap: 24px;
+align-items: flex-start;
+justify-content: center;
+margin-top: 16px;
+}
+
+.media-left,
+.media-right {
+flex: 1 1 280px; /* each takes about half on big screens, full width on small */
+}
+
+/* slideshow box */
+.show-slideshow {
 position: relative;
-max-width: 300px; /* overall box size */
-margin: 0 auto;
+max-width: 300px;
+margin: 0; /* left aligned inside its column */
 overflow: hidden;
 }
 
@@ -24,15 +41,41 @@ display: block;
 }
 
 .show-slideshow img {
-width: 75%; /* about 25% smaller than full box */
+width: 75%; /* keeps them small but clear */
 max-width: 100%;
-aspect-ratio: 3 / 4; /* portrait style */
 height: auto;
 object-fit: cover;
 border-radius: 6px;
 }
-</style>
-<style>
+
+/* responsive YouTube video */
+.video-wrapper {
+position: relative;
+padding-bottom: 56.25%; /* 16:9 */
+height: 0;
+max-width: 560px;
+}
+
+.video-wrapper iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+border: 0;
+}
+
+/* stack vertically on small screens */
+@media (max-width: 800px) {
+.media-row {
+flex-direction: column;
+align-items: center;
+}
+
+.show-slideshow {
+margin: 0 auto;
+}
+}
 /* ----- GLOBAL ----- */
 * {
 box-sizing: border-box;
@@ -349,7 +392,20 @@ margin-top: 1.5rem;
 Live sing-alongs, vintage favorites, and eluminated shows for seniors across the Bay Area.
 </p>
 </div>
-  <!DOCTYPE html>
+
+<div class="header-contact">
+<span><strong>Colinda De Groen</strong> – Musician &amp; Entertainer</span>
+<span>Los Altos, CA</span>
+<span>📞 (720) 882-1677</span>
+<span>📧 <a href="mailto:bayshowbiz@icloud.com">bayshowbiz@icloud.com</a></span>
+<span>
+<a href="https://bayshowbiz.com" target="_blank" rel="noopener">BayShowBiz.com</a> ·
+<a href="https://www.facebook.com/profile.php?id=61569140451339" target="_blank" rel="noopener">Facebook</a> ·
+<a href="https://www.youtube.com/@BayShowBiz" target="_blank" rel="noopener">YouTube</a>
+</span>
+</div>
+</header>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -441,19 +497,60 @@ setInterval(nextSlide, 4000);
 </script>
 </body>
 </html>
-<div class="header-contact">
-<span><strong>Colinda De Groen</strong> – Musician &amp; Entertainer</span>
-<span>Los Altos, CA</span>
-<span>📞 (720) 882-1677</span>
-<span>📧 <a href="mailto:bayshowbiz@icloud.com">bayshowbiz@icloud.com</a></span>
-<span>
-<a href="https://bayshowbiz.com" target="_blank" rel="noopener">BayShowBiz.com</a> ·
-<a href="https://www.facebook.com/profile.php?id=61569140451339" target="_blank" rel="noopener">Facebook</a> ·
-<a href="https://www.youtube.com/@BayShowBiz" target="_blank" rel="noopener">YouTube</a>
-</span>
-</div>
-</header>
+<!-- ✅ PUT THIS NEAR THE TOP OF YOUR BODY -->
+<section id="shows">
 
+<div class="show-slideshow">
+<div class="show-slide show-active">
+<img src="Colinda De Groen BayShowBiz im1.jpg" alt="BayShowBiz interactive sing-alongs 1">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im2.jpg" alt="BayShowBiz interactive sing-alongs 2">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im3.jpg" alt="BayShowBiz interactive sing-alongs 3">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im4.jpg" alt="BayShowBiz interactive sing-alongs 4">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im5.jpg" alt="BayShowBiz interactive sing-alongs 5">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im7.jpg" alt="BayShowBiz interactive sing-alongs 7">
+</div>
+</div>
+</section>
+
+<!-- SLIDESHOW SCRIPT AT THE BOTTOM OF BODY -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+// 👉 This finds ALL elements with class "show-slide"
+const slides = document.querySelectorAll('.show-slide');
+if (!slides.length) return;
+
+let current = 0;
+
+function showSlide(index) {
+slides.forEach((slide, i) => {
+slide.classList.toggle('show-active', i === index);
+});
+}
+
+function nextSlide() {
+current = (current + 1) % slides.length;
+showSlide(current);
+}
+
+// show the first slide
+showSlide(current);
+
+// change slides every 4 seconds
+setInterval(nextSlide, 4000);
+});
+</script>
+</body>
+</html>
 <div class="hero-text">
 <h3>Interactive Sing-Alongs &amp; Dazzling Shows</h3>
 <p>
