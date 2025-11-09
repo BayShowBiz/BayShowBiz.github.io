@@ -6,11 +6,26 @@
 <title>BayShowBiz – Not Your Average Senior Entertainment!</title>
  
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-.slideshow {
+/* layout for slideshow + video */
+.media-row {
+display: flex;
+flex-wrap: wrap;
+gap: 24px;
+align-items: flex-start;
+justify-content: center;
+margin-top: 16px;
+}
+
+.media-left,
+.media-right {
+flex: 1 1 280px; /* each takes about half on big screens, full width on small */
+}
+
+/* slideshow box */
+.show-slideshow {
 position: relative;
-max-width: 300px; /* overall box size */
-margin: 0 auto;
+max-width: 300px;
+margin: 0; /* left aligned inside its column */
 overflow: hidden;
 }
 
@@ -24,14 +39,41 @@ display: block;
 }
 
 .show-slideshow img {
-width: 75%; /* about 25% smaller than full box */
+width: 75%; /* keeps them small but clear */
 max-width: 100%;
-aspect-ratio: 3 / 4; /* portrait style */
 height: auto;
 object-fit: cover;
 border-radius: 6px;
 }
-</style>
+
+/* responsive YouTube video */
+.video-wrapper {
+position: relative;
+padding-bottom: 56.25%; /* 16:9 */
+height: 0;
+max-width: 560px;
+}
+
+.video-wrapper iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+border: 0;
+}
+
+/* stack vertically on small screens */
+@media (max-width: 800px) {
+.media-row {
+flex-direction: column;
+align-items: center;
+}
+
+.show-slideshow {
+margin: 0 auto;
+}
+}
 <style>
 /* ----- GLOBAL ----- */
 * {
@@ -362,7 +404,7 @@ Live sing-alongs, vintage favorites, and eluminated shows for seniors across the
 </span>
 </div>
 </header>
-  <!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -398,6 +440,62 @@ border-radius: 6px;
 </head>
 <body>
 
+<!-- ✅ PUT THIS NEAR THE TOP OF YOUR BODY -->
+<section id="shows">
+<h2>Interactive Sing-Alongs</h2>
+<p>Engaging, upbeat sing-alongs with residents in all levels of care.</p>
+
+<div class="show-slideshow">
+<div class="show-slide show-active">
+<img src="Colinda De Groen BayShowBiz im1.jpg" alt="BayShowBiz interactive sing-alongs 1">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im2.jpg" alt="BayShowBiz interactive sing-alongs 2">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im3.jpg" alt="BayShowBiz interactive sing-alongs 3">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im4.jpg" alt="BayShowBiz interactive sing-alongs 4">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im5.jpg" alt="BayShowBiz interactive sing-alongs 5">
+</div>
+<div class="show-slide">
+<img src="Colinda De Groen BayShowBiz im7.jpg" alt="BayShowBiz interactive sing-alongs 7">
+</div>
+</div>
+</section>
+
+<!-- SLIDESHOW SCRIPT AT THE BOTTOM OF BODY -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+// 👉 This finds ALL elements with class "show-slide"
+const slides = document.querySelectorAll('.show-slide');
+if (!slides.length) return;
+
+let current = 0;
+
+function showSlide(index) {
+slides.forEach((slide, i) => {
+slide.classList.toggle('show-active', i === index);
+});
+}
+
+function nextSlide() {
+current = (current + 1) % slides.length;
+showSlide(current);
+}
+
+// show the first slide
+showSlide(current);
+
+// change slides every 4 seconds
+setInterval(nextSlide, 4000);
+});
+</script>
+</body>
+</html>
 <!-- ✅ PUT THIS NEAR THE TOP OF YOUR BODY -->
 <section id="shows">
 
