@@ -117,13 +117,6 @@ body::before {
   background: rgba(255, 255, 255, 0.18);
   z-index: -1;
 }
- {
-content: "";
-position: fixed;
-inset: 0;
-background: rgba(0, 0, 0, 0.55);
-z-index: -1;
-}
 
 a {
 color: #ffd479;
@@ -440,6 +433,85 @@ margin-top: 1.5rem;
 <!-- HEADER WITH TWO SPOTLIGHTS -->
 <header class="site-header">
 <div class="logo-title">
+  /* =========================================================
+   RELAXING LIGHT-BLUE BOX THEME
+   Header + YouTube section + Slideshow section + Show cards
+   Paste ABOVE </style> (your </style> is currently on line 436)
+   ========================================================= */
+
+/* Header (BayShowBiz box) */
+header.site-header{
+  background: linear-gradient(180deg,
+    rgba(234, 246, 255, 0.95),
+    rgba(184, 220, 255, 0.92)
+  );
+  border: 1px solid rgba(18, 92, 150, 0.25);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+  color: #0c2c3a;
+}
+
+/* Remove the “spotlight” overlays (the “box image” effect) */
+header.site-header::before,
+header.site-header::after{
+  display: none !important;
+}
+
+.logo-title h1{ color:#0b2f4a; text-shadow:none; }
+.logo-title h2{ color:#0c3a52; }
+.logo-title p.tagline{ color:#0c2c3a; }
+.header-contact, .header-contact span{ color:#0c2c3a; }
+header.site-header a{ color:#0b4a6e; }
+
+/* YouTube box (section id="video") */
+#video{
+  background: linear-gradient(180deg,
+    rgba(234, 246, 255, 0.82),
+    rgba(207, 233, 255, 0.78)
+  );
+  border: 1px solid rgba(18, 92, 150, 0.22);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.10);
+  color: #0c2c3a;
+}
+
+#video iframe{
+  border-radius: 12px;
+}
+
+/* Slideshow box (section id="shows" + the slideshow container) */
+#shows{
+  background: linear-gradient(180deg,
+    rgba(234, 246, 255, 0.82),
+    rgba(207, 233, 255, 0.78)
+  );
+  border: 1px solid rgba(18, 92, 150, 0.22);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.10);
+  color: #0c2c3a;
+}
+
+.show-slideshow{
+  background: linear-gradient(180deg,
+    rgba(234, 246, 255, 0.70),
+    rgba(184, 220, 255, 0.70)
+  );
+  border: 1px solid rgba(18, 92, 150, 0.22);
+  border-radius: 14px;
+  padding: 0.75rem;
+}
+
+/* Show #1 / #2 / #3 boxes */
+.show-card{
+  background: linear-gradient(180deg,
+    rgba(234, 246, 255, 0.86),
+    rgba(184, 220, 255, 0.78)
+  );
+  border: 1px solid rgba(18, 92, 150, 0.22);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+  color: #0c2c3a;
+}
+
+.show-card h3{ color:#0b4a6e; }
+.show-meta{ color: rgba(12, 44, 58, 0.78); }
+
 <h1>BayShowBiz</h1>
 <h2>More Than Your Average Senior Entertainment!</h2>
 <p class="tagline">
