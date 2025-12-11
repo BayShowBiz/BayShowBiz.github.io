@@ -84,20 +84,40 @@ padding: 0;
 }
 
 body {
-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-sans-serif;
-color: #fdf7ec;
-line-height: 1.6;
-background:
-radial-gradient(circle at 15% 0%, rgba(255, 255, 255, 0.17), transparent 60%),
-radial-gradient(circle at 85% 0%, rgba(255, 255, 255, 0.17), transparent 60%),
-url("wood back.png");
-background-size: auto, auto, cover;
-background-attachment: fixed;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+
+  /* Keep your current light text if you keep dark sections */
+  color: #fdf7ec;
+
+  /* NEW: warm light-green + outlined circles */
+  background:
+    /* ring outlines (different colors) */
+    radial-gradient(circle at 12% 18%, transparent 0 52px, rgba(72, 160, 110, 0.35) 52px 56px, transparent 56px 100%),
+    radial-gradient(circle at 82% 12%, transparent 0 78px, rgba(46, 125, 50, 0.30) 78px 82px, transparent 82px 100%),
+    radial-gradient(circle at 70% 62%, transparent 0 64px, rgba(0, 150, 136, 0.26) 64px 68px, transparent 68px 100%),
+    radial-gradient(circle at 20% 78%, transparent 0 90px, rgba(255, 193, 7, 0.22) 90px 94px, transparent 94px 100%),
+    radial-gradient(circle at 92% 78%, transparent 0 58px, rgba(239, 83, 80, 0.18) 58px 62px, transparent 62px 100%),
+
+    /* soft “sunlit” glow spots */
+    radial-gradient(circle at 15% 0%, rgba(255,255,255,0.35), transparent 55%),
+    radial-gradient(circle at 85% 0%, rgba(255,255,255,0.30), transparent 55%),
+
+    /* base warm light green */
+    linear-gradient(180deg, #eefbe1 0%, #d9f3c3 55%, #cfeec0 100%);
+
+  background-attachment: fixed;
 }
 
-/* Dark overlay to keep text readable on wood texture */
+/* NEW: change overlay from dark to gentle brightener */
 body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.18);
+  z-index: -1;
+}
+ {
 content: "";
 position: fixed;
 inset: 0;
