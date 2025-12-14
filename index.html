@@ -49,14 +49,6 @@ background:
   radial-gradient(circle at 85% 0%, rgba(255,255,255,.30), transparent 55%),
   linear-gradient(180deg,#eefbe1 0%,#d9f3c3 55%,#cfeec0 100%);
 background-attachment: fixed;
-
-
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:rgba(255,255,255,.18);
-  z-index:-1;
 }
 
 a{color:#0b4a6e;text-decoration:none;}
@@ -75,10 +67,6 @@ header.site-header{
   box-shadow:0 14px 30px rgba(0,0,0,.12);
   overflow:hidden;
 }
-
-/* remove old spotlight overlays */
-header.site-header::before,
-header.site-header::after{display:none !important;}
 
 .logo-title{display:flex;flex-direction:column;gap:.2rem;}
 .logo-title h1{
