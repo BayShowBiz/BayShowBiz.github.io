@@ -118,7 +118,13 @@ ul.hero-points li{margin-bottom:.25rem;}
 ul.hero-points li::before{content:"♪";margin-right:.4rem;color:#0b4a6e;}
 
 /* Buttons */
-.button-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.8rem;}
+.button-row {
+  display: flex;
+  justify-content: center;   /* centers buttons horizontally */
+  gap: 0.6rem;               /* keeps a little space between them */
+  margin-top: 0.8rem;
+}
+
 .btn{
   display:inline-flex;align-items:center;justify-content:center;
   padding:.55rem 1.2rem;border-radius:999px;
