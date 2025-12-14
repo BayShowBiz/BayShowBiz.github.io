@@ -49,6 +49,14 @@ background:
   radial-gradient(circle at 85% 0%, rgba(255,255,255,.30), transparent 55%),
   linear-gradient(180deg,#eefbe1 0%,#d9f3c3 55%,#cfeec0 100%);
 background-attachment: fixed;
+
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(255,255,255,.18);
+  z-index:-1;
 }
 
 a{color:#0b4a6e;text-decoration:none;}
@@ -67,6 +75,10 @@ header.site-header{
   box-shadow:0 14px 30px rgba(0,0,0,.12);
   overflow:hidden;
 }
+
+/* remove old spotlight overlays */
+header.site-header::before,
+header.site-header::after{display:none !important;}
 
 .logo-title{display:flex;flex-direction:column;gap:.2rem;}
 .logo-title h1{
@@ -158,7 +170,9 @@ footer{text-align:center;font-size:.8rem;opacity:.8;margin-top:1.5rem;}
 </head>
 <body>
 <div class="page">
-
+<!-- HEADER WITH TWO SPOTLIGHTS -->
+<header class="site-header">
+<div class="logo-title">
 
 <h1>BayShowBiz</h1>
    
@@ -169,9 +183,9 @@ Live sing-alongs, vintage favorites, and eluminated shows across the Bay Area.
 <h2>More Than Your Average Senior Entertainment!
    </div>
 <div style="text-align: center; font-weight: bold; font-size: 1.3em;">
-  $100./First hour<br>
-  $75./Second hour<br>
- Second Hour shows are optional and must be booked same day Back-Back
+  $100./First hour.<br>
+  $75./Second hour.<br>
+  (Booked same day back-back)
 </div>
 </h2>
 
@@ -358,14 +372,13 @@ setInterval(nextSlide, 4000);
 </h2>
 
 <p style="max-width: 780px; margin: 0 auto 25px; font-size: 1.15em; line-height: 1.7; color: #342414;">
-Building four years of show-biz experience in communities like:
-  Independent Living • Assisted Living • Healthcare • Memory Care
+Four years in Activities Team as Musician and Professional Entertainer
+  Independent Living • Assisted Living • Memory Care • SNF
 </p>
 
 <ul style="list-style: none; padding: 0; margin: 0 auto; max-width: 700px; font-size: 1.1em; line-height: 1.9; color: #342414;">
 <li>• Kensington Place — Redwood City</li>
 <li>• Ivy Park — Palo Alto</li>
-<li>• Gordon Manor — Redwood City</li>
 <li>• Sequoia Living — Portola Valley</li>
 <li>• The Terraces at Los Altos</li>
 <li>• Rosener House — Menlo Park</li>
@@ -376,7 +389,7 @@ Building four years of show-biz experience in communities like:
 
 
 
-<p style="text-align: center; font-size: 1.6em; font-weight: bold;">
+<p style="text-align: center; font-size: 1.4em; font-weight: bold;">
   Ready to book ?<br />
   Email <a href="mailto:bayshowbiz@icloud.com" style="color: #0b4a6e; text-decoration: none; font-weight: bold;">
     bayshowbiz@icloud.com
@@ -411,4 +424,5 @@ document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
+
 
