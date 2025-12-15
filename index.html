@@ -10,17 +10,24 @@
 THEME + GLOBAL RESET
 ========================= */
 :root{
---bg-green-1:#0f3b2a;
---bg-green-2:#1f5b3e;
---bg-green-3:#2f7a52;
+/* Lighter, uplifting sage background */
+--bg-sage-1:#cfe6d6;
+--bg-sage-2:#bfe0cf;
+--bg-sage-3:#aed9c5;
 
---ink:#0c2c3a;
---ink-2:#0b2f4a;
---link:#0b4a6e;
+/* Sky blues */
+--sky-1: rgba(242, 250, 255, .96);
+--sky-2: rgba(214, 238, 255, .90);
+--sky-3: rgba(186, 222, 255, .82);
 
---card-a: rgba(234,246,255,.86);
---card-b: rgba(184,220,255,.78);
---card-border: rgba(18,92,150,.22);
+--ink:#0a2b3a;
+--ink-2:#08334f;
+--link:#0a5a86;
+
+/* Card colors: brighter + “airy” */
+--card-a: rgba(246, 252, 255, .92);
+--card-b: rgba(210, 236, 255, .86);
+--card-border: rgba(25, 110, 170, .22);
 
 --shadow: 0 12px 26px rgba(0,0,0,.10);
 
@@ -36,12 +43,14 @@ body{
 font-family: var(--font-sans);
 line-height:1.6;
 color: var(--ink);
-background: linear-gradient(180deg, var(--bg-green-1) 0%, var(--bg-green-2) 55%, var(--bg-green-3) 100%);
+background:
+linear-gradient(180deg, var(--bg-sage-1) 0%, var(--bg-sage-2) 55%, var(--bg-sage-3) 100%);
 background-attachment: fixed;
 position: relative;
 overflow-x: hidden;
 }
 
+/* Keep links cheerful + readable */
 a{color:var(--link);text-decoration:none;}
 a:hover{text-decoration:underline;}
 
@@ -54,127 +63,107 @@ text-align:center;
 
 /* =========================
 TWINKLING DIAMOND SPARKLES
-(multiple "beats")
+(multi-beat, lighter on phones)
 ========================= */
-
-/* Layer 1: diamond grid - slow twinkle */
 body::before{
 content:"";
 position:fixed;
 inset:0;
 z-index:-3;
 pointer-events:none;
-
-opacity:.26;
-
-/* little diamonds: two crossing lines that make an X */
+opacity:.20;
 background-image:
-linear-gradient(45deg, rgba(255,255,255,.70) 1.6px, transparent 1.6px),
-linear-gradient(-45deg, rgba(255,255,255,.70) 1.6px, transparent 1.6px);
-background-size: 140px 140px;
-background-position: 0 0, 70px 70px;
-
-animation: twinkleA 6.8s ease-in-out infinite;
+linear-gradient(45deg, rgba(255,255,255,.70) 1.4px, transparent 1.4px),
+linear-gradient(-45deg, rgba(255,255,255,.70) 1.4px, transparent 1.4px);
+background-size: 150px 150px;
+background-position: 0 0, 75px 75px;
+animation: twinkleA 7.2s ease-in-out infinite;
 }
 
-/* Layer 2: tiny points - medium twinkle */
 body::after{
 content:"";
 position:fixed;
 inset:0;
 z-index:-2;
 pointer-events:none;
-
-opacity:.18;
-
-background-image:
-radial-gradient(rgba(255,255,255,.95) 1px, transparent 1.2px);
-background-size: 110px 110px;
-
-animation: twinkleB 4.9s ease-in-out infinite;
+opacity:.14;
+background-image: radial-gradient(rgba(255,255,255,.92) 1px, transparent 1.2px);
+background-size: 120px 120px;
+animation: twinkleB 5.2s ease-in-out infinite;
 }
 
-/* Layer 3: extra sparkle dust - fast twinkle (using a real element) */
 .sparkle-layer{
 position:fixed;
 inset:0;
 z-index:-1;
 pointer-events:none;
-opacity:.14;
-
+opacity:.11;
 background-image:
-radial-gradient(rgba(255,255,255,.85) 1px, transparent 1.4px),
-radial-gradient(rgba(255,255,255,.55) 1px, transparent 1.5px);
-background-size: 180px 180px, 240px 240px;
+radial-gradient(rgba(255,255,255,.80) 1px, transparent 1.4px),
+radial-gradient(rgba(255,255,255,.55) 1px, transparent 1.6px);
+background-size: 200px 200px, 260px 260px;
 background-position: 20px 60px, 90px 30px;
-
-animation: twinkleC 3.6s ease-in-out infinite;
+animation: twinkleC 3.8s ease-in-out infinite;
 }
 
-/* different "beats" = different timings + phases */
 @keyframes twinkleA{
-0%,100%{opacity:.20; transform:translateY(0);}
-50%{opacity:.36; transform:translateY(-2px);}
+0%,100%{opacity:.16; transform:translateY(0);}
+50%{opacity:.26; transform:translateY(-2px);}
 }
 @keyframes twinkleB{
-0%,100%{opacity:.14;}
-50%{opacity:.30;}
+0%,100%{opacity:.11;}
+50%{opacity:.22;}
 }
 @keyframes twinkleC{
-0%,100%{opacity:.10; filter:blur(.2px);}
-50%{opacity:.22; filter:blur(0px);}
+0%,100%{opacity:.09; filter:blur(.15px);}
+50%{opacity:.16; filter:blur(0px);}
 }
 
 /* =========================
 ANIMATED SHIMMER BAND
+(softer for mobile)
 ========================= */
 .shimmer-band{
 position:fixed;
 inset:-30% -30%;
 z-index:-0;
 pointer-events:none;
-
-/* A soft diagonal band with fade edges */
 background:
 linear-gradient(115deg,
 transparent 0%,
-rgba(255,255,255,.00) 38%,
-rgba(255,255,255,.10) 45%,
+rgba(255,255,255,.00) 40%,
+rgba(255,255,255,.12) 47%,
 rgba(255,255,255,.22) 50%,
-rgba(255,255,255,.10) 55%,
-rgba(255,255,255,.00) 62%,
+rgba(255,255,255,.12) 53%,
+rgba(255,255,255,.00) 60%,
 transparent 100%
 );
-
 mix-blend-mode: screen;
-opacity:.40;
-filter: blur(6px);
-
-animation: shimmerMove 12s linear infinite;
+opacity:.34;
+filter: blur(7px);
+animation: shimmerMove 13.5s linear infinite;
 }
 
-/* slow drift across page */
 @keyframes shimmerMove{
-0% { transform: translate(-18%, -10%) rotate(0deg); }
-100% { transform: translate(18%, 10%) rotate(0deg); }
+0% { transform: translate(-16%, -10%) rotate(0deg); }
+100% { transform: translate(16%, 10%) rotate(0deg); }
 }
 
-/* Accessibility: reduce motion */
 @media (prefers-reduced-motion: reduce){
 body::before, body::after, .sparkle-layer, .shimmer-band{animation:none !important;}
 }
 
 /* =========================
-HEADER
+HEADER (Sky Blue)
 ========================= */
 header.site-header{
 position:relative;
 padding:1.4rem 1.1rem;
 margin-bottom:1.5rem;
 border-radius:12px;
-background:linear-gradient(180deg, rgba(234,246,255,.95), rgba(184,220,255,.92));
-border:1px solid rgba(18,92,150,.25);
-box-shadow:0 14px 30px rgba(0,0,0,.12);
+background: linear-gradient(180deg, var(--sky-1), var(--sky-2));
+border:1px solid rgba(25,110,170,.22);
+box-shadow:0 14px 30px rgba(0,0,0,.10);
 }
 
 .logo-title{
@@ -216,13 +205,13 @@ font-size:.95rem;
 }
 
 /* =========================
-SECTIONS / CARDS
+SECTIONS / CARDS (Sky Blue)
 ========================= */
 section{
 margin: 0 auto 2rem;
 padding:1.25rem 1.1rem;
 border-radius: var(--radius);
-background:linear-gradient(180deg, var(--card-a), var(--card-b));
+background: linear-gradient(180deg, var(--card-a), var(--card-b));
 border:1px solid var(--card-border);
 box-shadow: var(--shadow);
 text-align:center;
@@ -234,7 +223,7 @@ font-size:1.35rem;
 color: var(--ink-2);
 margin-bottom:.7rem;
 padding-bottom:.25rem;
-border-bottom:1px solid rgba(18,92,150,.18);
+border-bottom:1px solid rgba(25,110,170,.18);
 }
 
 p{margin:.55rem 0;}
@@ -271,8 +260,9 @@ margin:0 auto;
 overflow:hidden;
 border-radius:14px;
 padding:0.75rem;
-background: rgba(255,255,255,.55);
-border:1px solid rgba(18,92,150,.20);
+background: rgba(255,255,255,.72);
+border:1px solid rgba(25,110,170,.18);
+box-shadow:0 10px 22px rgba(0,0,0,.08);
 }
 .show-slide{display:none;text-align:center;}
 .show-slide.show-active{display:block;}
@@ -301,8 +291,8 @@ margin-top:1rem;
 .card{
 border-radius:12px;
 padding:1rem 1rem 1.05rem;
-background:rgba(255,255,255,.62);
-border:1px solid rgba(18,92,150,.20);
+background: rgba(255,255,255,.78);
+border:1px solid rgba(25,110,170,.18);
 box-shadow:0 10px 22px rgba(0,0,0,.08);
 text-align:left;
 }
@@ -317,7 +307,7 @@ text-align:center;
 
 .pricing-card{
 text-align:center;
-background: rgba(255,255,255,.70);
+background: rgba(255,255,255,.85);
 }
 
 .pricing-title{
@@ -334,18 +324,12 @@ gap:1rem;
 padding:.65rem .75rem;
 margin:.5rem 0;
 border-radius:10px;
-background: rgba(224,240,255,.85);
-border:1px solid rgba(18,92,150,.18);
+background: rgba(224, 244, 255, .92);
+border:1px solid rgba(25,110,170,.16);
 text-align:left;
 }
-.price-row .label{
-font-weight:900;
-color: var(--ink-2);
-}
-.price-row .desc{
-font-size:.95rem;
-opacity:.92;
-}
+.price-row .label{font-weight:900;color: var(--ink-2);}
+.price-row .desc{font-size:.95rem;opacity:.92;}
 .price-row .price{
 font-weight:900;
 font-size:1.15rem;
@@ -377,7 +361,7 @@ align-items:center;
 justify-content:center;
 padding:.6rem 1.2rem;
 border-radius:999px;
-border:1px solid rgba(18,92,150,.30);
+border:1px solid rgba(25,110,170,.24);
 font-size:.9rem;
 text-transform:uppercase;
 letter-spacing:.09em;
@@ -386,28 +370,32 @@ cursor:pointer;
 transition:transform .13s ease, box-shadow .13s ease, background .13s ease;
 }
 .btn-primary{
-background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(132,196,255,.92));
+background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(178, 226, 255, .95));
 color: var(--ink-2);
-box-shadow:0 10px 25px rgba(0,0,0,.12);
+box-shadow:0 10px 22px rgba(0,0,0,.10);
 }
-.btn-primary:hover{transform:translateY(-1px);box-shadow:0 14px 30px rgba(0,0,0,.18);}
-.btn-ghost{background:transparent;color:var(--link);}
-.btn-ghost:hover{background:rgba(255,255,255,.35);}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 14px 28px rgba(0,0,0,.14);}
+.btn-ghost{
+background: rgba(255,255,255,.55);
+color: var(--link);
+}
+.btn-ghost:hover{background:rgba(255,255,255,.80);}
 
 /* =========================
-EXPERIENCE (PEACH SECTION)
+EXPERIENCE (Cheery Peach)
 ========================= */
 .peach{
-background: linear-gradient(180deg, rgba(255,176,122,.85), rgba(255,176,122,.72));
-border: 2px solid rgba(232,143,92,.95);
+background: linear-gradient(180deg, rgba(255, 196, 150, .95), rgba(255, 170, 120, .88));
+border: 2px solid rgba(238, 130, 80, .88);
 color:#2a1b10;
+box-shadow:0 14px 28px rgba(0,0,0,.10);
 }
 .peach h2{
-border-bottom:1px solid rgba(60,30,10,.25);
+border-bottom:1px solid rgba(80,30,10,.22);
 color:#2a1b10;
 }
 .peach p, .peach ul{color:#2a1b10;}
-.peach a{color:#0b2f4a;font-weight:900;}
+.peach a{color:#08334f;font-weight:900;}
 
 footer{
 text-align:center;
@@ -419,7 +407,6 @@ margin-top:1.5rem;
 </head>
 
 <body>
-<!-- sparkle layers + shimmer band -->
 <div class="sparkle-layer" aria-hidden="true"></div>
 <div class="shimmer-band" aria-hidden="true"></div>
 
@@ -441,6 +428,7 @@ Four years Activity Team Musician
 <span>📞 (720) 882-1677</span>
 <span>📧 <a href="mailto:bayshowbiz@icloud.com">bayshowbiz@icloud.com</a></span>
 <span>· <a href="https://www.facebook.com/profile.php?id=61582652498272" target="_blank" rel="noopener">Facebook</a></span>
+<span>· <a href="https://www.youtube.com/@BayShowBiz" target="_blank" rel="noopener">YouTube</a></span>
 </div>
 </header>
 
@@ -497,7 +485,7 @@ Second hour is optional and must be booked for the same day back to back.
 
 <div class="button-row">
 <a class="btn btn-primary" href="mailto:bayshowbiz@icloud.com?subject=BayShowBiz%20Booking">Book a Show</a>
-<a class="btn btn-ghost" href="#shows">See Show Photos</a>
+<a class="btn btn-ghost" href="https://www.youtube.com/@BayShowBiz" target="_blank" rel="noopener">See Sample Videos</a>
 </div>
 </section>
 
