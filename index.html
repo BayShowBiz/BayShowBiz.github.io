@@ -60,22 +60,19 @@ margin:0 auto;
 padding:1.5rem 1rem 3rem;
 text-align:center;
 }
-.calendar-wrapper {
-  width: 300px;
-  height: 225px;
-  overflow: hidden;
+.calendar-crop {
+  width: 300px;     /* visible width */
+  height: 250px;    /* visible height */
+  overflow: hidden; /* hides the rest */
   position: relative;
 }
 
-.calendar-wrapper iframe {
-  width: 800px;
-  height: 600px;
-  transform: scale(0.37);
-  transform-origin: top left;
+.calendar-crop iframe {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -50px;       /* adjust to show the part you want */
+  left: -250px;     /* adjust to center the month */
 }
+
 
 
 /* =========================
@@ -438,14 +435,17 @@ margin-top:1.5rem;
       By Colinda De Groen in Los Altos, CA<br>
       Four years Activity Team Musician
     </p>
-<div class="calendar-wrapper">
+<div class="calendar-crop">
   <iframe 
     src="https://calendar.google.com/calendar/embed?src=ODFjMGE2N2VlNDg2NWQ1Njc4ZjY2MjcxMjk5NTZlYzc1NjUwOGE0ODQ3YTJlOTI5OTgwNWMxOGNlYzI1ZDI3MkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&ctz=America/Los_Angeles&mode=MONTH"
     style="border:0"
+    width="800"
+    height="600"
     frameborder="0"
     scrolling="no">
   </iframe>
 </div>
+
 
 
 </header>
