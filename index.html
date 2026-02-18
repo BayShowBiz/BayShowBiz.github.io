@@ -60,32 +60,33 @@ margin:0 auto;
 padding:1.5rem 1rem 3rem;
 text-align:center;
 }
-.calendar-container {
+.calendar-wrapper {
   width: 100%;
-  max-width: 400px; /* half the original width */
-  overflow: hidden; /* prevents horizontal spillover */
-  flex: 1 1 400px;
+  overflow: hidden; /* prevents spillover */
+}
+
+.calendar-scale {
+  transform: scale(0.70); /* shrink to 70% */
+  transform-origin: top left; /* anchor the shrink */
+  width: 100%;
 }
 
 .calendar-iframe {
-  width: 100%;
-  height: 300px; /* half the original height */
+  width: 800px;   /* original size */
+  height: 600px;  /* original size */
   border: 0;
 }
 
-/* Mobile fix */
+/* Mobile */
 @media (max-width: 600px) {
-  .calendar-container {
-    max-width: 100%;
+  .calendar-scale {
+    transform: scale(0.55); /* even smaller on phones */
   }
 
   .calendar-iframe {
-    width: 100%;
-    height: 260px; /* slightly shorter for phones */
+    height: 500px; /* adjust height so nothing cuts off */
   }
 }
-
-
 
 /* =========================
 TWINKLING DIAMOND SPARKLES
