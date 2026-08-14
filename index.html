@@ -265,29 +265,7 @@ height:100%;
 border:0;
 }
 
-/* =========================
-SLIDESHOW
-========================= */
-.show-slideshow{
-position:relative;
-max-width:360px;
-margin:0 auto;
-overflow:hidden;
-border-radius:14px;
-padding:0.75rem;
-background: rgba(255,255,255,.72);
-border:1px solid rgba(25,110,170,.18);
-box-shadow:0 10px 22px rgba(0,0,0,.08);
-}
-.show-slide{display:none;text-align:center;}
-.show-slide.show-active{display:block;}
-.show-slideshow img{
-width:85%;
-max-width:100%;
-height:auto;
-object-fit:cover;
-border-radius:10px;
-}
+
 
 /* =========================
 PRICING + FEATURES GRID
@@ -522,53 +500,7 @@ Second hour is optional and must be booked for the same day back to back.
 </div>
 </section>
 
-<section id="shows">
-<h2>Showcase</h2>
 
-<div class="show-slideshow">
-<div class="show-slide show-active">
-<img src="Colinda De Groen BayShowBiz (1).jpeg" alt="BayShowBiz interactive sing-alongs 1">
-</div>
-<div class="show-slide">
-<img src="Colinda De Groen BayShowBiz (1).png" alt="BayShowBiz interactive sing-alongs 2">
-</div>
-
-  <div class="show-slide">
-  <img src=" BayShowBiz Colinda De Groen.JPG" alt="BayShowBiz interactive sing-alongs 3">
-</div>
-
-<div class="show-slide">
-<img src="Colinda De Groen BayShowBiz (3).png" alt="BayShowBiz interactive sing-alongs 5">
-</div>
-  <div class="show-slide">
-<img src="Colinda De Groen BayShowBiz instruments slide.png" alt="BayShowBiz interactive sing-alongs 5">
-</div>
-
-</div>
-</section>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-const slides = document.querySelectorAll('.show-slide');
-if (!slides.length) return;
-
-let current = 0;
-
-function showSlide(index) {
-slides.forEach((slide, i) => {
-slide.classList.toggle('show-active', i === index);
-});
-}
-
-function nextSlide() {
-current = (current + 1) % slides.length;
-showSlide(current);
-}
-
-showSlide(current);
-setInterval(nextSlide, 4000);
-});
-</script>
 
 <section id="experience" class="peach">
 <h2>Experience</h2>
